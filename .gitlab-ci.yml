@@ -60,6 +60,3 @@ verify:
   stage: test
   script:
     - 'mvn $MAVEN_CLI_OPTS verify'
-  except:
-    variables:
-      - $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
