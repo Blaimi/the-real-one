@@ -50,7 +50,7 @@ cache:
 
 # For merge requests do not `deploy` but only run `verify`.
 # See https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
-.verify:
+verify:
   image: maven:3.9.5-eclipse-temurin-21-alpine
   stage: test
   script:
