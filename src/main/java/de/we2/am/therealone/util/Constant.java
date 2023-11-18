@@ -7,6 +7,7 @@ public final class Constant {
     public static final String KEY_MESSAGE = "message";
     public static final String KEY_ERROR_MESSAGE = "error.message";
     public static final String KEY_ERROR_TRACE = "error.trace";
+    public static final String KEY_ERROR_STACK_TRACE = "error.stack-trace";
     public static final String KEY_OBJECT_ARGUMENT_NAME = "object.argument.name";
     public static final String KEY_OBJECT_ARGUMENT_VALUE = "object.argument.value";
     public static final String KEY_OBJECT_ARGUMENT_PATTERN = "object.argument.pattern";
@@ -14,6 +15,7 @@ public final class Constant {
     public static final String KEY_REQUEST_METHOD = "request.method";
     public static final String KEY_RESPONSE_STATUS = "response.status";
     public static final String KEY_RESPONSE_ENTITY = "response.entity";
+    public static final String KEY_TOKEN_EXPIRED_ON = "token.expired-on";
     private Constant() {
     }
 }

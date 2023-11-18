@@ -2,6 +2,8 @@ package de.we2.am.therealone.web;
 
 import de.we2.am.therealone.web.filter.CorsResponseFilter;
 import de.we2.am.therealone.web.filter.DebugLoggingResponseFilter;
+import de.we2.am.therealone.web.filter.JWTAuthenticationFilter;
+import de.we2.am.therealone.web.mapper.ForbiddenExceptionMapper;
 import de.we2.am.therealone.web.mapper.MismatchedInputExceptionMapper;
 import de.we2.am.therealone.web.mapper.TheRealOneExceptionMapper;
 import de.we2.am.therealone.web.resource.HealthResource;
@@ -16,8 +18,10 @@ public class RestConfig extends ResourceConfig {
         // Register filters
         register(DebugLoggingResponseFilter.class);
         register(CorsResponseFilter.class);
+        register(JWTAuthenticationFilter.class);
 
         // Register exception mapper
+        register(ForbiddenExceptionMapper.class);
         register(MismatchedInputExceptionMapper.class);
         register(TheRealOneExceptionMapper.class);
 
