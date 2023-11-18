@@ -46,6 +46,18 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- Health endpoint -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
