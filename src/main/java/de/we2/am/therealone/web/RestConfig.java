@@ -6,6 +6,7 @@ import de.we2.am.therealone.web.filter.JWTAuthenticationFilter;
 import de.we2.am.therealone.web.mapper.ForbiddenExceptionMapper;
 import de.we2.am.therealone.web.mapper.MismatchedInputExceptionMapper;
 import de.we2.am.therealone.web.mapper.TheRealOneExceptionMapper;
+import de.we2.am.therealone.web.resource.BuildingsResource;
 import de.we2.am.therealone.web.resource.HealthResource;
 import de.we2.am.therealone.web.resource.StatusResource;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -26,6 +27,7 @@ public class RestConfig extends ResourceConfig {
         register(TheRealOneExceptionMapper.class);
 
         // Register resources
+        register(BuildingsResource.class);
         register(HealthResource.class);
         register(StatusResource.class);
     }
