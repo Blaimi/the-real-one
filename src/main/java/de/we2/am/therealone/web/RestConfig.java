@@ -10,6 +10,7 @@ import de.we2.am.therealone.web.resource.BuildingsResource;
 import de.we2.am.therealone.web.resource.HealthResource;
 import de.we2.am.therealone.web.resource.StatusResource;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -20,6 +21,9 @@ public class RestConfig extends ResourceConfig {
         register(DebugLoggingResponseFilter.class);
         register(CorsResponseFilter.class);
         register(JWTAuthenticationFilter.class);
+
+        // Register features
+        register(RolesAllowedDynamicFeature.class);
 
         // Register exception mapper
         register(ForbiddenExceptionMapper.class);
