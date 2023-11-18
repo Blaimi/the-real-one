@@ -10,11 +10,15 @@ patches:
         path: /spec/template/spec/containers/0/image
         value: derfrzocker/the-real-one:latest
       - op: replace
-        path: /spec/template/spec/containers/0/ports/0/containerPort
-        value: 9000
-      - op: replace
         path: /spec/template/spec/containers/0/imagePullPolicy
         value: Always
+      - op: add
+        path: /spec/template/spec/containers/0/env/-
+        value:
+          name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
     target:
       group: apps
       version: v1
