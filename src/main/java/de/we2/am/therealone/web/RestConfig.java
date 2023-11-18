@@ -1,5 +1,6 @@
 package de.we2.am.therealone.web;
 
+import de.we2.am.therealone.web.filter.CorsResponseFilter;
 import de.we2.am.therealone.web.filter.DebugLoggingResponseFilter;
 import de.we2.am.therealone.web.resource.HealthResource;
 import de.we2.am.therealone.web.resource.StatusResource;
@@ -12,6 +13,7 @@ public class RestConfig extends ResourceConfig {
     public RestConfig() {
         // Register filters
         register(DebugLoggingResponseFilter.class);
+        register(CorsResponseFilter.class);
 
         // Register resources
         register(HealthResource.class);
