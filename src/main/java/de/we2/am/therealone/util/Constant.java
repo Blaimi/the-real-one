@@ -19,6 +19,8 @@ public final class Constant {
     public static final String KEY_RESPONSE_STATUS = "response.status";
     public static final String KEY_RESPONSE_ENTITY = "response.entity";
     public static final String KEY_TOKEN_EXPIRED_ON = "token.expired-on";
+    public static final String KEY_ERROR_NONE_DELETE_OBJECT_TYPE = "error.none-delete-object.type";
+    public static final String KEY_ERROR_NONE_DELETE_OBJECT_IDS = "error.none-delete-object.ids";
 
     private Constant() {
     }
