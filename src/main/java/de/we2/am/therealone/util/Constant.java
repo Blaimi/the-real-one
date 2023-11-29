@@ -3,6 +3,7 @@ package de.we2.am.therealone.util;
 public final class Constant {
 
     public static final String BUILDING_OBJECT_TYPE = "building";
+    public static final String STOREY_OBJECT_TYPE = "storey";
     public static final String KEY_OBJECT_TYPE = "object.type";
     public static final String KEY_OBJECT_ID = "object.id";
     public static final String KEY_MESSAGE = "message";

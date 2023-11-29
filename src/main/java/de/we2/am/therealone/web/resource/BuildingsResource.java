@@ -37,4 +37,12 @@ public class BuildingsResource {
     public Response getBuilding(@PathParam("id") String id) {
         return Response.ok(buildingsManager.get(ConverterUtil.convertId(id, Constant.BUILDING_OBJECT_TYPE))).build();
     }
+
+    @DELETE
+    @Path("{id}")
+    @RolesAllowed({"Admin", "Building-Delete"})
+    public Response deleteBuilding(@PathParam("id") String id) {
+        buildingsManager.delete(securityContext, ConverterUtil.convertId(id, Constant.BUILDING_OBJECT_TYPE));
+        return Response.status(Response.Status.NO_CONTENT).build();
+    }
 }
