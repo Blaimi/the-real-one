@@ -4,6 +4,7 @@ import de.we2.am.therealone.web.filter.CorsResponseFilter;
 import de.we2.am.therealone.web.filter.DebugLoggingResponseFilter;
 import de.we2.am.therealone.web.filter.JWTAuthenticationFilter;
 import de.we2.am.therealone.web.mapper.ForbiddenExceptionMapper;
+import de.we2.am.therealone.web.mapper.JsonParseExceptionMapper;
 import de.we2.am.therealone.web.mapper.MismatchedInputExceptionMapper;
 import de.we2.am.therealone.web.mapper.TheRealOneExceptionMapper;
 import de.we2.am.therealone.web.resource.BuildingsResource;
@@ -27,6 +28,7 @@ public class RestConfig extends ResourceConfig {
 
         // Register exception mapper
         register(ForbiddenExceptionMapper.class);
+        register(JsonParseExceptionMapper.class);
         register(MismatchedInputExceptionMapper.class);
         register(TheRealOneExceptionMapper.class);
 
