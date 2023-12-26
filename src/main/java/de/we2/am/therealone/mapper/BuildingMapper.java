@@ -18,6 +18,6 @@ public class BuildingMapper implements ObjectMapper<BuildingTO, BuildingDO> {
 
     @Override
     public BuildingTO convertDOtoTO(BuildingDO dataObject) {
-        return new BuildingTO(dataObject.getId(), dataObject.getAddress(), dataObject.getName(), dataObject.getDeletedAt());
+        return new BuildingTO(dataObject.getId(), dataObject.getName(), dataObject.getAddress(), dataObject.getDeletedAt());
     }
 }
