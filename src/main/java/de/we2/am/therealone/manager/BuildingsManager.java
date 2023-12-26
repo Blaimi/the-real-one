@@ -8,16 +8,19 @@ import de.we2.am.therealone.exception.NotFoundException;
 import de.we2.am.therealone.mapper.BuildingMapper;
 import de.we2.am.therealone.util.Constant;
 import de.we2.am.therealone.web.request.building.BuildingCreateRequest;
+import de.we2.am.therealone.web.request.building.BuildingPutRequest;
 import de.we2.am.therealone.web.to.building.BuildingTO;
 import de.we2.am.therealone.web.to.building.BuildingsTO;
 import de.we2.am.therealone.web.to.storey.StoreyTO;
 import de.we2.am.therealone.web.to.storey.StoreysTO;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.message.StringMapMessage;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -71,6 +74,7 @@ public class BuildingsManager {
         validatedAddress(request.address());
 
         BuildingDO buildingDO = new BuildingDO();
+        buildingDO.setId(UUID.randomUUID());
         buildingDO.setName(request.name());
         buildingDO.setAddress(request.address());
 
@@ -89,6 +93,59 @@ public class BuildingsManager {
         logger.info(log);
 
         return buildingMapper.convertDOtoTO(buildingDO);
+    }
+
+    @Transactional
+    public Pair<Response.Status, BuildingTO> updateOrCreate(SecurityContext securityContext, UUID id, BuildingPutRequest request) {
+        if (request.getDeletedAt() != null && !BuildingPutRequest.DEFAULT_DELETED_AT.equals(request.getDeletedAt())) {
+            throw new InvalidArgumentException("Invalid argument deleted_at", String.format("deleted_at only supports null, got '%s'", request.getDeletedAt()), Constant.BUILDING_OBJECT_TYPE, "deleted_at", request.getDeletedAt(), "null");
+        }
+
+        Optional<BuildingDO> optionalBuilding = buildingRepository.findById(id);
+        StringMapMessage log = new StringMapMessage()
+                .with(Constant.KEY_OBJECT_TYPE, Constant.BUILDING_OBJECT_TYPE)
+                .with(Constant.KEY_OBJECT_ID, id);
+        BuildingDO buildingDO;
+        boolean created = false;
+        if (optionalBuilding.isEmpty()) {
+            // Creating new building
+            buildingDO = new BuildingDO();
+            buildingDO.setId(id);
+            created = true;
+            log.with(Constant.KEY_MESSAGE, "Create new building via put request");
+            log.with(Constant.KEY_OPERATION, "Create");
+        } else {
+            buildingDO = optionalBuilding.get();
+            log.with(Constant.KEY_MESSAGE, "Updated building");
+            log.with(Constant.KEY_OPERATION, "Updated");
+        }
+
+        boolean recover = request.getDeletedAt() == null;
+
+        if (buildingDO.getDeletedAt() != null && !recover) {
+            // Cannot change deleted building without recovering it
+            throw new InvalidArgumentException("Missing argument deleted_at", "Cannot change delete building with out recovering it", Constant.BUILDING_OBJECT_TYPE, "deleted_at", "", "null");
+        } else if (buildingDO.getDeletedAt() == null && recover) {
+            // Cannot recover a none deleted building -> throw an error
+            throw new InvalidArgumentException("Invalid argument deleted_at", String.format("Cannot recover none deleted building '%s'", id), Constant.BUILDING_OBJECT_TYPE, "deleted_at", String.valueOf(request.getDeletedAt()), "null");
+        }
+
+        if (recover) {
+            buildingDO.setDeletedAt(null);
+            log.with(Constant.KEY_MESSAGE, "Updated and recover building");
+        }
+
+        if (securityContext.getUserPrincipal() != null) {
+            log.with(Constant.KEY_USER_ID, securityContext.getUserPrincipal().getName());
+        }
+
+        logger.info(log);
+
+        buildingDO.setName(request.getName());
+        buildingDO.setAddress(request.getAddress());
+        buildingRepository.save(buildingDO);
+
+        return Pair.of(created ? Response.Status.CREATED : Response.Status.OK, buildingMapper.convertDOtoTO(buildingDO));
     }
 
     @Transactional
