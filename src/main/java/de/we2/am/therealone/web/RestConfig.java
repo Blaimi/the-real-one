@@ -7,9 +7,7 @@ import de.we2.am.therealone.web.mapper.ForbiddenExceptionMapper;
 import de.we2.am.therealone.web.mapper.JsonParseExceptionMapper;
 import de.we2.am.therealone.web.mapper.MismatchedInputExceptionMapper;
 import de.we2.am.therealone.web.mapper.TheRealOneExceptionMapper;
-import de.we2.am.therealone.web.resource.BuildingsResource;
-import de.we2.am.therealone.web.resource.HealthResource;
-import de.we2.am.therealone.web.resource.StatusResource;
+import de.we2.am.therealone.web.resource.*;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +33,8 @@ public class RestConfig extends ResourceConfig {
         // Register resources
         register(BuildingsResource.class);
         register(HealthResource.class);
+        register(RoomsResource.class);
         register(StatusResource.class);
+        register(StoreysResource.class);
     }
 }
