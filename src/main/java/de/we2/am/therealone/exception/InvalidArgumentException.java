@@ -27,6 +27,8 @@ public class InvalidArgumentException extends TheRealOneException {
         message.with(Constant.KEY_OBJECT_TYPE, objectType);
         message.with(Constant.KEY_OBJECT_ARGUMENT_NAME, argumentName);
         message.with(Constant.KEY_OBJECT_ARGUMENT_VALUE, argument);
-        message.with(Constant.KEY_OBJECT_ARGUMENT_PATTERN, argumentPattern);
+        if (argumentPattern != null) {
+            message.with(Constant.KEY_OBJECT_ARGUMENT_PATTERN, argumentPattern);
+        }
     }
 }
