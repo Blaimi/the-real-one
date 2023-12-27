@@ -10,7 +10,6 @@ import de.we2.am.therealone.exception.NotFoundException;
 import de.we2.am.therealone.mapper.StoreyMapper;
 import de.we2.am.therealone.util.Constant;
 import de.we2.am.therealone.util.ConverterUtil;
-import de.we2.am.therealone.web.request.building.BuildingPutRequest;
 import de.we2.am.therealone.web.request.storey.StoreyCreateRequest;
 import de.we2.am.therealone.web.request.storey.StoreyPutRequest;
 import de.we2.am.therealone.web.to.room.RoomTO;
@@ -213,7 +212,7 @@ public class StoreyManager {
     }
 
     private void validatedName(String name) {
-       if (name == null || !NAME_TEST.test(name)) {
+        if (name == null || !NAME_TEST.test(name)) {
             throw new InvalidArgumentException("Invalid argument name", String.format("'%s' does not match pattern '%s'", name, NAME_PATTERN), Constant.STOREY_OBJECT_TYPE, "name", name, NAME_PATTERN);
         }
     }

@@ -7,5 +7,6 @@ import java.time.Instant;
 import java.util.UUID;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record RoomTO(UUID id, String name, @JsonProperty("storey_id") UUID storeyId, @JsonProperty("deleted_at") Instant deletedAt) {
+public record RoomTO(UUID id, String name, @JsonProperty("storey_id") UUID storeyId,
+                     @JsonProperty("deleted_at") Instant deletedAt) {
 }

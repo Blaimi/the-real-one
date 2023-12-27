@@ -1,7 +1,6 @@
 package de.we2.am.therealone.web.mapper;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import de.we2.am.therealone.util.Constant;
 import de.we2.am.therealone.util.ErrorUtil;
 import de.we2.am.therealone.web.to.error.ErrorCodeTO;

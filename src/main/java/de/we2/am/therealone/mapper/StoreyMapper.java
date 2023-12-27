@@ -1,10 +1,7 @@
 package de.we2.am.therealone.mapper;
 
-import de.we2.am.therealone.dao.entity.BuildingDO;
 import de.we2.am.therealone.dao.entity.StoreyDO;
 import de.we2.am.therealone.dao.repository.BuildingRepository;
-import de.we2.am.therealone.dao.repository.StoreyRepository;
-import de.we2.am.therealone.web.to.building.BuildingTO;
 import de.we2.am.therealone.web.to.storey.StoreyTO;
 import jakarta.inject.Inject;
 

@@ -7,5 +7,6 @@ import java.time.Instant;
 import java.util.UUID;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record StoreyTO(UUID id, String name, @JsonProperty("building_id") UUID buildingId, @JsonProperty("deleted_at") Instant deletedAt) {
+public record StoreyTO(UUID id, String name, @JsonProperty("building_id") UUID buildingId,
+                       @JsonProperty("deleted_at") Instant deletedAt) {
 }

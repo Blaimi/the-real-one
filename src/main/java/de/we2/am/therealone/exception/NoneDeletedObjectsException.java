@@ -15,14 +15,10 @@ public class NoneDeletedObjectsException extends TheRealOneException {
 
     private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-   private final String objectType;
-   private final Object objectId;
-   private final String noneDeleteObjectType;
-   private final List<UUID> noneDeleteId;
-
-   public static <T> NoneDeletedObjectsException create(String errorMessage, String moreInfo, String objectType, Object objectId, String noneDeleteObjectType, Function<T, UUID> mapper, List<T> noneDeleteId) {
-       return new NoneDeletedObjectsException(errorMessage, moreInfo, objectType, objectId, noneDeleteObjectType, noneDeleteId.stream().map(mapper).toList());
-   }
+    private final String objectType;
+    private final Object objectId;
+    private final String noneDeleteObjectType;
+    private final List<UUID> noneDeleteId;
 
     public NoneDeletedObjectsException(String errorMessage, String moreInfo, String objectType, Object objectId, String noneDeleteObjectType, List<UUID> noneDeleteId) {
         super(errorMessage, Response.Status.BAD_REQUEST, ErrorCodeTO.BAD_REQUEST, moreInfo);
@@ -30,6 +26,10 @@ public class NoneDeletedObjectsException extends TheRealOneException {
         this.objectId = objectId;
         this.noneDeleteObjectType = noneDeleteObjectType;
         this.noneDeleteId = noneDeleteId;
+    }
+
+    public static <T> NoneDeletedObjectsException create(String errorMessage, String moreInfo, String objectType, Object objectId, String noneDeleteObjectType, Function<T, UUID> mapper, List<T> noneDeleteId) {
+        return new NoneDeletedObjectsException(errorMessage, moreInfo, objectType, objectId, noneDeleteObjectType, noneDeleteId.stream().map(mapper).toList());
     }
 
     @Override

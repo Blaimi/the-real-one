@@ -2,7 +2,8 @@
 <Configuration status="INFO">
     <Appenders>
         <Console name="LogToConsole" target="SYSTEM_OUT">
-            <EcsLayout serviceName="${spring:spring.application.name}" serviceVersion="${spring:build.version}" serviceNodeName="${env:NODE_NAME}"/>
+            <EcsLayout serviceName="${spring:spring.application.name}" serviceVersion="${spring:build.version}"
+                       serviceNodeName="${env:NODE_NAME}"/>
         </Console>
     </Appenders>
     <Loggers>
