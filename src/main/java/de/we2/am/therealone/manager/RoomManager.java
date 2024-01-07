@@ -109,6 +109,8 @@ public class RoomManager {
             throw new InvalidArgumentException("Invalid argument deleted_at", String.format("deleted_at only supports null, got '%s'", request.getDeletedAt()), Constant.ROOM_OBJECT_TYPE, "deleted_at", request.getDeletedAt(), "null");
         }
 
+        validatedName(request.getName());
+
         Optional<RoomDO> optionalRoom = roomRepository.findById(id);
         StringMapMessage log = new StringMapMessage()
                 .with(Constant.KEY_OBJECT_TYPE, Constant.ROOM_OBJECT_TYPE)

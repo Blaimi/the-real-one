@@ -104,6 +104,9 @@ public class BuildingsManager {
             throw new InvalidArgumentException("Invalid argument deleted_at", String.format("deleted_at only supports null, got '%s'", request.getDeletedAt()), Constant.BUILDING_OBJECT_TYPE, "deleted_at", request.getDeletedAt(), "null");
         }
 
+        validatedName(request.getName());
+        validatedAddress(request.getAddress());
+
         Optional<BuildingDO> optionalBuilding = buildingRepository.findById(id);
         StringMapMessage log = new StringMapMessage()
                 .with(Constant.KEY_OBJECT_TYPE, Constant.BUILDING_OBJECT_TYPE)
