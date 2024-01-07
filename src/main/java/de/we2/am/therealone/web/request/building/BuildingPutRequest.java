@@ -1,5 +1,6 @@
 package de.we2.am.therealone.web.request.building;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
@@ -8,11 +9,9 @@ public class BuildingPutRequest {
 
     public static final String DEFAULT_DELETED_AT = "Laputa";
 
-    @JsonProperty(required = true)
-    private String name;
+    private final String name;
 
-    @JsonProperty(required = true)
-    private String address;
+    private final String address;
 
     /*
         There is no easy way in Jackson (at least I didn't find one)
@@ -27,28 +26,22 @@ public class BuildingPutRequest {
     @JsonProperty("deleted_at")
     private String deletedAt = DEFAULT_DELETED_AT;
 
-    public String getName() {
-        return name;
+    @JsonCreator
+    public BuildingPutRequest(@JsonProperty(required = true, value = "name") String name, @JsonProperty(required = true, value = "address") String address) {
+        this.name = name;
+        this.address = address;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getDeletedAt() {
         return deletedAt;
-    }
-
-    public void setDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package de.we2.am.therealone.web.request.room;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
@@ -8,11 +9,9 @@ public class RoomPutRequest {
 
     public static final String DEFAULT_DELETED_AT = "Laputa";
 
-    @JsonProperty(required = true)
-    private String name;
+    private final String name;
 
-    @JsonProperty(required = true, value = "storey_id")
-    private String storeyId;
+    private final String storeyId;
 
     /*
         There is no easy way in Jackson (at least I didn't find one)
@@ -27,28 +26,22 @@ public class RoomPutRequest {
     @JsonProperty("deleted_at")
     private String deletedAt = DEFAULT_DELETED_AT;
 
-    public String getName() {
-        return name;
+    @JsonCreator
+    public RoomPutRequest(@JsonProperty(required = true, value = "name") String name, @JsonProperty(required = true, value = "storey_id") String storeyId) {
+        this.name = name;
+        this.storeyId = storeyId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public String getStoreyId() {
         return storeyId;
     }
 
-    public void setStoreyId(String storeyId) {
-        this.storeyId = storeyId;
-    }
-
     public String getDeletedAt() {
         return deletedAt;
-    }
-
-    public void setDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
     }
 
     @Override

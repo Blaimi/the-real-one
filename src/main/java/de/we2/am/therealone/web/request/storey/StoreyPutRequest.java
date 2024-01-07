@@ -1,5 +1,6 @@
 package de.we2.am.therealone.web.request.storey;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
@@ -8,11 +9,9 @@ public class StoreyPutRequest {
 
     public static final String DEFAULT_DELETED_AT = "Laputa";
 
-    @JsonProperty(required = true)
-    private String name;
+    private final String name;
 
-    @JsonProperty(required = true, value = "building_id")
-    private String buildingId;
+    private final String buildingId;
 
     /*
         There is no easy way in Jackson (at least I didn't find one)
@@ -27,28 +26,22 @@ public class StoreyPutRequest {
     @JsonProperty("deleted_at")
     private String deletedAt = DEFAULT_DELETED_AT;
 
-    public String getName() {
-        return name;
+    @JsonCreator
+    public StoreyPutRequest(@JsonProperty(required = true, value = "name") String name, @JsonProperty(required = true, value = "building_id") String buildingId) {
+        this.name = name;
+        this.buildingId = buildingId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public String getBuildingId() {
         return buildingId;
     }
 
-    public void setBuildingId(String buildingId) {
-        this.buildingId = buildingId;
-    }
-
     public String getDeletedAt() {
         return deletedAt;
-    }
-
-    public void setDeletedAt(String deletedAt) {
-        this.deletedAt = deletedAt;
     }
 
     @Override
