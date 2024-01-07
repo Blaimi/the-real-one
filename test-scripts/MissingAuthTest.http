@@ -1,0 +1,197 @@
+### Posting a building requirs auth
+POST localhost:9090/api/v2/assets/buildings
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Post new Building without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a building requirs auth
+PUT localhost:9090/api/v2/assets/buildings/b4925d3b-c375-49be-a6ba-d142ecbba9da
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Put Building without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Deleting a building requirs auth
+DELETE localhost:9090/api/v2/assets/buildings/b4925d3b-c375-49be-a6ba-d142ecbba9da
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Delete Building without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a storey requirs auth
+POST localhost:9090/api/v2/assets/storeys
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Post new Storey without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a storey requirs auth
+PUT localhost:9090/api/v2/assets/storeys/b4925d3b-c375-49be-a6ba-d142ecbba9da
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Put Storey without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Deleting a storey requirs auth
+DELETE localhost:9090/api/v2/assets/storeys/b4925d3b-c375-49be-a6ba-d142ecbba9da
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Delete Storey without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room requirs auth
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Post new Room without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room requirs auth
+PUT localhost:9090/api/v2/assets/rooms/b4925d3b-c375-49be-a6ba-d142ecbba9da
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Put Room without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Deleting a room requirs auth
+DELETE localhost:9090/api/v2/assets/rooms/b4925d3b-c375-49be-a6ba-d142ecbba9da
+Content-Type: application/json
+
+{}
+
+> {%
+    client.test("Delete Room without auth request executed successfully", function () {
+        client.assert(response.status === 401, "Response status is not 401");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}

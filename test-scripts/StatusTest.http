@@ -1,0 +1,86 @@
+### Test status endpoint
+GET localhost:9090/api/v2/assets/status
+
+> {%
+    client.test("Status request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("authors"), "Body does not contain authors key");
+        client.assert(body["authors"].constructor === Array, "Authors is not of type array");
+
+        client.assert(body.hasOwnProperty("api_version"), "Body does not contain api version key");
+        client.assert(body["api_version"].constructor === String, "Api version is not of type string");
+
+        const keys = Object.keys(body);
+        client.assert(keys.length === 2, `There should only be two keys, but actual got ${keys.length}, values: ${keys}`);
+    });
+
+%}
+
+
+### Test health endpoint
+GET localhost:9090/api/v2/assets/health
+
+> {%
+    client.test("Health request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("ready"), "Body does not contain ready key");
+        client.assert(body["ready"].constructor === Boolean, "Ready is not of type boolean");
+        client.assert(body["ready"], "Ready should be true");
+
+        client.assert(body.hasOwnProperty("live"), "Body does not contain live key");
+        client.assert(body["live"].constructor === Boolean, "Api version is not of type boolean");
+        client.assert(body["live"], "Live should be true");
+    });
+
+%}
+
+### Test health live endpoint
+GET localhost:9090/api/v2/assets/health/live
+
+> {%
+    client.test("Health live request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("live"), "Body does not contain live key");
+        client.assert(body["live"].constructor === Boolean, "Live is not of type boolean");
+        client.assert(body["live"], "Live should be true");
+
+        const keys = Object.keys(body);
+        client.assert(keys.length === 1, `There should only be one key, but actual got ${keys.length}, values: ${keys}`);
+    });
+
+%}
+
+### Test health ready endpoint
+GET localhost:9090/api/v2/assets/health/ready
+
+> {%
+    client.test("Health ready request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("ready"), "Body does not contain ready key");
+        client.assert(body["ready"].constructor === Boolean, "Ready is not of type boolean");
+        client.assert(body["ready"], "Ready should be true");
+
+        const keys = Object.keys(body);
+        client.assert(keys.length === 1, `There should only be one key, but actual got ${keys.length}, values: ${keys}`);
+    });
+%}

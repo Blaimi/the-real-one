@@ -1,0 +1,100 @@
+### First Create a Building wich we use for the storey
+POST localhost:9090/api/v2/assets/buildings
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Laputa",
+  "address": "The castel in the sky"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_building_id", body["id"]);
+%}
+
+### Next Create a Storey which we can use for the room
+POST localhost:9090/api/v2/assets/storeys
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "A38",
+  "building_id": "{{post_building_id}}"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_storey_id", body["id"]);
+%}
+
+### Now Create a Room wich we can delete
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Storey",
+  "storey_id": "{{post_storey_id}}"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_room_id", body["id"]);
+%}
+
+### Delete the room, which should be possible
+DELETE localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Room request executed successfully", function () {
+        client.assert(response.status === 204, "Response status is not 204");
+    });
+%}
+
+### We should error when we try to delete it again
+DELETE localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Room again request executed successfully", function () {
+        client.assert(response.status === 404, "Response status is not 404");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### At last check if we error out if we try to put the deleted room without recovering it
+PUT localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": "{{post_storey_id}}"
+}
+
+> {%
+    client.test("Recover Room without recovering flag request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}

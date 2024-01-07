@@ -1,0 +1,38 @@
+### Getting a none existing building
+GET localhost:9090/api/v2/assets/buildings/cea29729-f5ff-4b20-9711-ccaa225a80ef
+
+> {%
+    client.test("Get none existing Building request executed successfully", function () {
+        client.assert(response.status === 404, "Response status is not 404");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Deleting a none existing building
+DELETE localhost:9090/api/v2/assets/buildings/cea29729-f5ff-4b20-9711-ccaa225a80ef
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete none existing Building request executed successfully", function () {
+        client.assert(response.status === 404, "Response status is not 404");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}

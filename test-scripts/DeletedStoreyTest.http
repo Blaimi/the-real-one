@@ -1,0 +1,157 @@
+### First Create a Building wich we use for the storey
+POST localhost:9090/api/v2/assets/buildings
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Laputa",
+  "address": "The castel in the sky"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_building_id", body["id"]);
+%}
+
+### Next Create a Storey wich we can delete
+POST localhost:9090/api/v2/assets/storeys
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "A38",
+  "building_id": "{{post_building_id}}"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_storey_id", body["id"]);
+%}
+
+### Now lets create a room which we can use to check the delete logic
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Storey",
+  "storey_id": "{{post_storey_id}}"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_room_id", body["id"]);
+%}
+
+### Lets try to delete the storey, which should not be possible
+DELETE localhost:9090/api/v2/assets/storeys/{{post_storey_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Storey with active rooms request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Lets delete the room, so we can delete the storey
+DELETE localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Room request executed successfully", function () {
+        client.assert(response.status === 204, "Response status is not 204");
+    });
+%}
+
+### Now we should be able to delete the storey
+DELETE localhost:9090/api/v2/assets/storeys/{{post_storey_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Storey request executed successfully", function () {
+        client.assert(response.status === 204, "Response status is not 204");
+    });
+%}
+
+### We should error when we try to delete it again
+DELETE localhost:9090/api/v2/assets/storeys/{{post_storey_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Storey again request executed successfully", function () {
+        client.assert(response.status === 404, "Response status is not 404");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### If we are already here, lets also check recovering the room with a deleted storey
+PUT localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+"name": "Valid",
+  "storey_id": "{{post_storey_id}}",
+  "deleted_at": null
+}
+
+> {%
+    client.test("Recover Room with deleted Storey request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### At last check if we error out if we try to put the deleted storey without recovering it
+PUT localhost:9090/api/v2/assets/storeys/{{post_storey_id}}
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+"name": "Valid",
+  "building_id": "{{post_building_id}}"
+}
+
+> {%
+    client.test("Recover Storey without recovering flag request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}

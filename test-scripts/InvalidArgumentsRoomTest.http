@@ -1,0 +1,449 @@
+### Getting a Room without valid storey id
+GET localhost:9090/api/v2/assets/rooms?storey_id=invalid
+
+> {%
+    client.test("Get Room without valid storey id request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room with null name arguments
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": null,
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Post new Room with null name argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room without valid name arguments
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "\n  sdaf  sdaf",
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Post new Room without valid name argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room without valid name json type argument
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": [],
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Post new Room without valid name json type argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room with null storey id arguments
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": null
+}
+
+> {%
+    client.test("Post new Room with null storey id argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room without valid storey id arguments
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": "\n  asd asdass  asdasd\n\n"
+}
+
+> {%
+    client.test("Post new Room without valid storey id argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Posting a room without valid storey id json type argument
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": []
+}
+
+> {%
+    client.test("Post new Room without valid storey id json type argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Getting a room without valid room id
+GET localhost:9090/api/v2/assets/rooms/invalid
+
+> {%
+    client.test("Get Room without valid room id request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid room id
+PUT localhost:9090/api/v2/assets/rooms/invalid
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Put Room without valid room id request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room with null name arguments
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": null,
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Putting Room with null name argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid name arguments
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "\n  sdaf  sdaf",
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Put Room without valid name argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid name json type argument
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": [],
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b"
+}
+
+> {%
+    client.test("Put Room without valid name json type argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room with null storey id arguments
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": null
+}
+
+> {%
+    client.test("Put Room with null storey id argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid storey id arguments
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": "\n  asd asdass  asdasd\n\n"
+}
+
+> {%
+    client.test("Put Room without valid storey id argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid storey id json type argument
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": []
+}
+
+> {%
+    client.test("Put Room without valid storey id json type argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid deleted at value
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b",
+  "deleted_at": "Invalid"
+}
+
+> {%
+    client.test("Put Room without valid deleted at argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Putting a room without valid deleted at json type argument
+PUT localhost:9090/api/v2/assets/rooms/e178d8cd-d8d8-4f62-9293-27342cc2335b
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Valid",
+  "storey_id": "e178d8cd-d8d8-4f62-9293-27342cc2335b",
+  "deleted_at": []
+}
+
+> {%
+    client.test("Put Room without valid deleted at json type argument request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}
+
+### Deleting a room without valid room id
+DELETE localhost:9090/api/v2/assets/rooms/invalid
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Room without valid room id request executed successfully", function () {
+        client.assert(response.status === 400, "Response status is not 400");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("errors"), "Body does not contain errors key");
+        client.assert(body["errors"].constructor === Array, "Errors is not of type array");
+
+        client.assert(body.hasOwnProperty("trace"), "Body does not contain trace key");
+        client.assert(body["trace"].constructor === String, "Trace is not of type string");
+    });
+%}

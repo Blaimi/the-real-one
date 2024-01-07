@@ -1,0 +1,403 @@
+### First we need to create a building for the storey
+POST localhost:9090/api/v2/assets/buildings
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Laputa",
+  "address": "The castel in the sky"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_building_id", body["id"]);
+%}
+
+### Now we can create a storey for the room
+POST localhost:9090/api/v2/assets/storeys
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Storey",
+  "building_id": "{{post_building_id}}"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("post_storey_id", body["id"]);
+%}
+
+### Lets create a Room
+POST localhost:9090/api/v2/assets/rooms
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "A38",
+  "storey_id": "{{post_storey_id}}"
+}
+
+> {%
+    client.test("Room created successfully", function () {
+        client.assert(response.status === 201, "Response status is not 201");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(body["id"].constructor === String, "Id is not of type string");
+        client.global.set("post_room_id", body["id"]);
+
+        client.assert(body.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(body["name"].constructor === String, "Name is not of type string");
+        client.assert(body["name"] == "A38", "Name should be A38");
+
+        client.assert(body.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(body["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(body["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+        const keys = Object.keys(body);
+        client.assert(keys.length === 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+    });
+
+%}
+
+### Now lets get the room
+GET localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+
+> {%
+    client.test("Room requested successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(body["id"].constructor === String, "Id is not of type string");
+        client.assert(body["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+        client.assert(body.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(body["name"].constructor === String, "Name is not of type string");
+        client.assert(body["name"] == "A38", "Name should be A38");
+
+        client.assert(body.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(body["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(body["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+        const keys = Object.keys(body);
+        client.assert(keys.length === 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+    });
+
+%}
+
+### Now deleted the room
+DELETE localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+> {%
+    client.test("Delete Room request executed successfully", function () {
+        client.assert(response.status === 204, "Response status is not 204");
+    });
+%}
+
+### Verify that it got actually deleted
+GET localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+
+> {%
+    client.test("Room requested successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(body["id"].constructor === String, "Id is not of type string");
+        client.assert(body["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+        client.assert(body.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(body["name"].constructor === String, "Name is not of type string");
+        client.assert(body["name"] == "A38", "Name should be A38");
+
+        client.assert(body.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(body["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(body["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+        client.assert(body.hasOwnProperty("deleted_at"), "Body does not contain deleted_at key");
+        client.assert(body["deleted_at"].constructor === String, "Deleted at is not of type string");
+
+        const keys = Object.keys(body);
+        client.assert(keys.length === 4, `There should only be four key, but actual got ${keys.length}, values: ${keys}`);
+    });
+
+%}
+
+### Now Restore it
+PUT localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "A Room",
+  "storey_id": "{{post_storey_id}}",
+  "deleted_at": null
+}
+
+> {%
+    client.test("Recover Deleted room request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(body["id"].constructor === String, "Id is not of type string");
+        client.assert(body["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+        client.assert(body.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(body["name"].constructor === String, "Name is not of type string");
+        client.assert(body["name"] == "A Room", "Name should be A Room");
+
+        client.assert(body.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(body["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(body["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+        const keys = Object.keys(body);
+        client.assert(keys.length == 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+    });
+%}
+
+
+### Let's Test putting a new one instead of recovering, but first create a random uuid and store it
+GET localhost:9090
+
+> {%
+    // From https://stackoverflow.com/a/21963136
+    function broofa() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    client.global.set("put_room_id", broofa());
+%}
+
+### Put new Room
+PUT localhost:9090/api/v2/assets/rooms/{{put_room_id}}
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Other Room Name",
+  "storey_id": "{{post_storey_id}}"
+}
+
+> {%
+    client.test("Put new Room request executed successfully", function () {
+        client.assert(response.status === 201, "Response status is not 201");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(body["id"].constructor === String, "Id is not of type string");
+        client.assert(body["id"] == client.global.get("put_room_id"), `Id should be ${client.global.get("put_room_id")}`);
+
+        client.assert(body.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(body["name"].constructor === String, "Name is not of type string");
+        client.assert(body["name"] == "Other Room Name", "Name should be Other Room Name");
+
+        client.assert(body.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(body["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(body["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+        const keys = Object.keys(body);
+        client.assert(keys.length == 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+    });
+%}
+
+### Now lets delete it, so that we can test the include_deleted flag
+DELETE localhost:9090/api/v2/assets/rooms/{{put_room_id}}
+Authorization: Bearer {{$auth.token("biletado")}}
+
+### Test getting storeys without deleted ones
+GET localhost:9090/api/v2/assets/rooms
+
+> {%
+    client.test("Get all none deleted rooms request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("rooms"), "Body does not contain rooms key");
+        client.assert(body["rooms"].constructor === Array, "Rooms is not of type array");
+        for (let i = 0; i < body["rooms"].length; i++) {
+            let room = body["rooms"][i];
+            if (room["id"] == client.global.get("post_room_id")) {
+                client.assert(room.hasOwnProperty("id"), "Body does not contain id key");
+                client.assert(room["id"].constructor === String, "Id is not of type string");
+                client.assert(room["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+                client.assert(room.hasOwnProperty("name"), "Body does not contain name key");
+                client.assert(room["name"].constructor === String, "Name is not of type string");
+                client.assert(room["name"] == "A Room", "Name should be A Room");
+
+                client.assert(room.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+                client.assert(room["storey_id"].constructor === String, "Storey id is not of type string");
+                client.assert(room["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+                const keys = Object.keys(room);
+                client.assert(keys.length == 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+            }
+
+            if (room["id"] == client.global.get("put_room_id")) {
+                client.assert(false, `Room with id ${room["id"]} should not be present, since it is deleted`);
+            }
+        }
+    });
+%}
+
+### Test getting rooms with deleted ones
+GET localhost:9090/api/v2/assets/rooms?include_deleted=true
+
+> {%
+    client.test("Get all Rooms with deleted one request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("rooms"), "Body does not contain rooms key");
+        client.assert(body["rooms"].constructor === Array, "Rooms is not of type array");
+        for (let i = 0; i < body["rooms"].length; i++) {
+            let room = body["rooms"][i];
+            if (room["id"] == client.global.get("post_room_id")) {
+                client.assert(room.hasOwnProperty("id"), "Body does not contain id key");
+                client.assert(room["id"].constructor === String, "Id is not of type string");
+                client.assert(room["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+                client.assert(room.hasOwnProperty("name"), "Body does not contain name key");
+                client.assert(room["name"].constructor === String, "Name is not of type string");
+                client.assert(room["name"] == "A Room", "Name should be A Room");
+
+                client.assert(room.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+                client.assert(room["storey_id"].constructor === String, "Storey id is not of type string");
+                client.assert(room["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+                let keys = Object.keys(room);
+                client.assert(keys.length == 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+            }
+
+            if (room["id"] == client.global.get("put_room_id")) {
+                client.assert(room.hasOwnProperty("id"), "Body does not contain id key");
+                client.assert(room["id"].constructor === String, "Id is not of type string");
+                client.assert(room["id"] == client.global.get("put_room_id"), `Id should be ${client.global.get("put_room_id")}`);
+
+                client.assert(room.hasOwnProperty("name"), "Body does not contain name key");
+                client.assert(room["name"].constructor === String, "Name is not of type string");
+                client.assert(room["name"] == "Other Room Name", "Name should be Other Room Name");
+
+                client.assert(room.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+                client.assert(room["storey_id"].constructor === String, "Storey id is not of type string");
+                client.assert(room["storey_id"] == client.global.get("post_storey_id"), `Storey id should be ${client.global.get("post_storey_id")}`);
+
+                client.assert(room.hasOwnProperty("deleted_at"), "Body does not contain deleted at key");
+                client.assert(room["deleted_at"].constructor === String, "Deleted at is not of type string");
+
+                let keys = Object.keys(room);
+                client.assert(keys.length == 4, `There should only be four key, but actual got ${keys.length}, values: ${keys}`);
+            }
+        }
+    });
+%}
+
+### Lets create a second building and set it as building for a room
+POST localhost:9090/api/v2/assets/storeys
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "Other Storey",
+  "building_id": "{{post_building_id}}"
+}
+
+> {%
+    const body = response.body;
+    client.global.set("other_storey_id", body["id"]);
+%}
+
+### Lets set the storey of the post_room_id room
+PUT localhost:9090/api/v2/assets/rooms/{{post_room_id}}
+Content-Type: application/json
+Authorization: Bearer {{$auth.token("biletado")}}
+
+{
+  "name": "New Storey Room",
+  "storey_id": "{{other_storey_id}}"
+}
+
+> {%
+    client.test("Put new Storey to room request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(body["id"].constructor === String, "Id is not of type string");
+        client.assert(body["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+        client.assert(body.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(body["name"].constructor === String, "Name is not of type string");
+        client.assert(body["name"] == "New Storey Room", "Name should be New Storey Room");
+
+        client.assert(body.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(body["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(body["storey_id"] == client.global.get("other_storey_id"), `Storey id should be ${client.global.get("other_storey_id")}`);
+
+        const keys = Object.keys(body);
+        client.assert(keys.length == 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+    });
+%}
+
+### Lets also test if we can get all rooms of the new storey, it now should only have one room
+GET localhost:9090/api/v2/assets/rooms?storey_id={{other_storey_id}}
+
+> {%
+    client.test("Get all none deleted Rooms for a specific storey request executed successfully", function () {
+        client.assert(response.status === 200, "Response status is not 200");
+
+        const contentType = response.headers.valueOf("content-type");
+        client.assert(contentType == "application/json", `Expected Content-Type is application/json, but actual is ${contentType}`);
+
+        const body = response.body;
+        client.assert(body.hasOwnProperty("rooms"), "Body does not contain rooms key");
+        client.assert(body["rooms"].constructor === Array, "Rooms is not of type array");
+        client.assert(body["rooms"].length === 1, `There should ony be one room but got ${body["rooms"]}`)
+        let storey = body["rooms"][0];
+        client.assert(storey.hasOwnProperty("id"), "Body does not contain id key");
+        client.assert(storey["id"].constructor === String, "Id is not of type string");
+        client.assert(storey["id"] == client.global.get("post_room_id"), `Id should be ${client.global.get("post_room_id")}`);
+
+        client.assert(storey.hasOwnProperty("name"), "Body does not contain name key");
+        client.assert(storey["name"].constructor === String, "Name is not of type string");
+        client.assert(storey["name"] == "New Storey Room", "Name should be New Storey Room");
+
+        client.assert(storey.hasOwnProperty("storey_id"), "Body does not contain storey id key");
+        client.assert(storey["storey_id"].constructor === String, "Storey id is not of type string");
+        client.assert(storey["storey_id"] == client.global.get("other_storey_id"), `Storey id should be ${client.global.get("other_storey_id")}`);
+
+        const keys = Object.keys(storey);
+        client.assert(keys.length == 3, `There should only be three key, but actual got ${keys.length}, values: ${keys}`);
+    });
+%}
