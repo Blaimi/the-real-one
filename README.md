@@ -11,6 +11,14 @@ kubectl wait pods -n biletado -l app.kubernetes.io/part-of=biletado --for condit
 
 You can also find the builds on dockerhub [here](https://hub.docker.com/r/derfrzocker/the-real-one).
 
+## Build from source
+
+To build and run this project from source, first make sure you have podman installed and a kind cluster created.
+Now you can clone this repository and make your changes to it and then run the following script.
+```shell
+./run.sh
+```
+
 ## Configuration
 
 This project uses Spring boot as the framework, for a list of all properties supported by spring click [here.](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
