@@ -9,6 +9,8 @@ kubectl apply -k . --prune -l app.kubernetes.io/part-of=biletado -n biletado
 kubectl wait pods -n biletado -l app.kubernetes.io/part-of=biletado --for condition=Ready --timeout=120s
 ```
 
+You can also find the builds on dockerhub [here](https://hub.docker.com/r/derfrzocker/the-real-one).
+
 ## Configuration
 
 This project uses Spring boot as the framework, for a list of all properties supported by spring click [here.](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
