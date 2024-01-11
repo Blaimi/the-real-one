@@ -40,6 +40,11 @@ import java.security.interfaces.RSAPublicKey;
 public class JWTAuthenticationFilter implements ContainerRequestFilter {
 
     private final Logger logger = LogManager.getLogger(JWTAuthenticationFilter.class);
+    // Verify is thread save, so we can reuse it
+    private final JWTVerifier verifier = JWT.require(createAlgorithm()).build();
+
+    public JWTAuthenticationFilter() throws MalformedURLException {
+    }
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
@@ -61,9 +66,6 @@ public class JWTAuthenticationFilter implements ContainerRequestFilter {
 
         String token = header.substring("Bearer ".length());
         try {
-            Algorithm algorithm = createAlgorithm();
-
-            JWTVerifier verifier = JWT.require(algorithm).build();
             DecodedJWT jwt = verifier.verify(token);
 
             Claim sub = jwt.getClaim("sub");
@@ -92,8 +94,7 @@ public class JWTAuthenticationFilter implements ContainerRequestFilter {
                     return "Bearer";
                 }
             });
-        } catch (AlgorithmMismatchException | SignatureVerificationException | MissingClaimException |
-                 MalformedURLException e) {
+        } catch (AlgorithmMismatchException | SignatureVerificationException | MissingClaimException e) {
             // Those errors are application errors
             StringWriter stringWriter = new StringWriter();
             e.printStackTrace(new PrintWriter(stringWriter));
