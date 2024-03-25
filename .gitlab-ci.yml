@@ -23,7 +23,6 @@ stages:
   - "deploy"
 
 variables:
-  CONTAINERFILENAME: "Dockerfile"
   # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
   MAVEN_OPTS: >-
     -Dhttps.protocols=TLSv1.2
