@@ -17,11 +17,6 @@ include:
     ref: "4"
     file: '/image-build.yml'
 
-stages:
-  - "build"
-  - "test"
-  - "deploy"
-
 variables:
   # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
   MAVEN_OPTS: >-
