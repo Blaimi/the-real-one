@@ -9,8 +9,6 @@ kubectl apply -k . --prune -l app.kubernetes.io/part-of=biletado -n biletado
 kubectl wait pods -n biletado -l app.kubernetes.io/part-of=biletado --for condition=Ready --timeout=120s
 ```
 
-You can also find the builds on dockerhub [here](https://hub.docker.com/r/derfrzocker/the-real-one).
-
 ## update lock-file
 ```shell
 mvn io.github.chains-project:maven-lockfile:generate
