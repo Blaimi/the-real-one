@@ -11,6 +11,11 @@ kubectl wait pods -n biletado -l app.kubernetes.io/part-of=biletado --for condit
 
 You can also find the builds on dockerhub [here](https://hub.docker.com/r/derfrzocker/the-real-one).
 
+## update lock-file
+```shell
+mvn io.github.chains-project:maven-lockfile:generate
+```
+
 ## Build from source
 
 To build and run this project from source, first make sure you have podman installed and a kind cluster created.
