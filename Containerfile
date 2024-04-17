@@ -8,7 +8,7 @@ RUN mvn dependency:go-offline -B
 COPY ./ ./
 RUN mvn package -DskipTests=true
 
-FROM docker.io/library/eclipse-temurin:21-jre-alpine
+FROM docker.io/library/eclipse-temurin:22-jre-alpine
 
 WORKDIR /backend
 COPY --from=builder target/therealone.jar /backend/therealone.jar
