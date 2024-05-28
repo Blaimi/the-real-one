@@ -1,4 +1,4 @@
-FROM docker.io/library/maven:3.9.6-eclipse-temurin-21-alpine as builder
+FROM docker.io/library/maven:3.9.7-eclipse-temurin-21-alpine as builder
 
 COPY pom.xml lockfile.json ./
 RUN mvn io.github.chains-project:maven-lockfile:validate
