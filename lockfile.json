@@ -12,6 +12,7 @@
       "checksum": "0246fbea9ccf6a03585632caa529973d163a3e723cc448e25f5ce384e3c43995",
       "scope": "compile",
       "selectedVersion": "1.6.0",
+      "included": true,
       "id": "co.elastic.logging:log4j2-ecs-layout:1.6.0",
       "children": [
         {
@@ -22,6 +23,7 @@
           "checksum": "84230d005297503cb7f1fccc98dcfba50481923bd3a96fb4b3e0a74da9aa8c99",
           "scope": "compile",
           "selectedVersion": "1.6.0",
+          "included": true,
           "id": "co.elastic.logging:ecs-logging-core:1.6.0",
           "parent": "co.elastic.logging:log4j2-ecs-layout:1.6.0",
           "children": []
@@ -36,6 +38,7 @@
       "checksum": "173aab2a30727e5586e13055fb6c4e27112453f5d8cf1136b3369c674cbe011f",
       "scope": "compile",
       "selectedVersion": "4.4.0",
+      "included": true,
       "id": "com.auth0:java-jwt:4.4.0",
       "children": [
         {
@@ -46,6 +49,7 @@
           "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
           "scope": "compile",
           "selectedVersion": "2.15.4",
+          "included": true,
           "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
           "parent": "com.auth0:java-jwt:4.4.0",
           "children": [
@@ -57,6 +61,7 @@
               "checksum": "f204ebbd552614a22b8531ffe350d47f8fd42c45bb60517c07974dc27a5a1dd3",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": false,
               "id": "com.fasterxml.jackson.core:jackson-annotations:2.15.4",
               "parent": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
               "children": []
@@ -69,6 +74,7 @@
               "checksum": "8dc9210dd285db366f45f518dd1e6a9ccfeb0f1a8e184a899fe96d29edf1fd94",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": true,
               "id": "com.fasterxml.jackson.core:jackson-core:2.15.4",
               "parent": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
               "children": []
@@ -85,6 +91,7 @@
       "checksum": "df67bbc7776a33c92edc01e02019feca0593b4d0e44a2c28d3205454ec20a08c",
       "scope": "compile",
       "selectedVersion": "0.22.1",
+      "included": true,
       "id": "com.auth0:jwks-rsa:0.22.1",
       "children": [
         {
@@ -95,6 +102,7 @@
           "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
           "scope": "runtime",
           "selectedVersion": "2.15.4",
+          "included": false,
           "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
           "parent": "com.auth0:jwks-rsa:0.22.1",
           "children": []
@@ -107,6 +115,7 @@
           "checksum": "91fbba37f1c8b251cf9ea9e7d3a369eb79eb1e6a5df1d4bbf483dd0380740281",
           "scope": "runtime",
           "selectedVersion": "32.1.1-jre",
+          "included": true,
           "id": "com.google.guava:guava:32.1.1-jre",
           "parent": "com.auth0:jwks-rsa:0.22.1",
           "children": [
@@ -118,6 +127,7 @@
               "checksum": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7",
               "scope": "runtime",
               "selectedVersion": "3.0.2",
+              "included": true,
               "id": "com.google.code.findbugs:jsr305:3.0.2",
               "parent": "com.google.guava:guava:32.1.1-jre",
               "children": []
@@ -130,6 +140,7 @@
               "checksum": "9e6814cb71816988a4fd1b07a993a8f21bb7058d522c162b1de849e19bea54ae",
               "scope": "runtime",
               "selectedVersion": "2.18.0",
+              "included": true,
               "id": "com.google.errorprone:error_prone_annotations:2.18.0",
               "parent": "com.google.guava:guava:32.1.1-jre",
               "children": []
@@ -142,6 +153,7 @@
               "checksum": "a171ee4c734dd2da837e4b16be9df4661afab72a41adaf31eb84dfdaf936ca26",
               "scope": "runtime",
               "selectedVersion": "1.0.1",
+              "included": true,
               "id": "com.google.guava:failureaccess:1.0.1",
               "parent": "com.google.guava:guava:32.1.1-jre",
               "children": []
@@ -154,6 +166,7 @@
               "checksum": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99",
               "scope": "runtime",
               "selectedVersion": "9999.0-empty-to-avoid-conflict-with-guava",
+              "included": true,
               "id": "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
               "parent": "com.google.guava:guava:32.1.1-jre",
               "children": []
@@ -166,6 +179,7 @@
               "checksum": "f02a95fa1a5e95edb3ed859fd0fb7df709d121a35290eff8b74dce2ab7f4d6ed",
               "scope": "runtime",
               "selectedVersion": "2.8",
+              "included": true,
               "id": "com.google.j2objc:j2objc-annotations:2.8",
               "parent": "com.google.guava:guava:32.1.1-jre",
               "children": []
@@ -178,6 +192,7 @@
               "checksum": "e316255bbfcd9fe50d165314b85abb2b33cb2a66a93c491db648e498a82c2de1",
               "scope": "runtime",
               "selectedVersion": "3.42.0",
+              "included": false,
               "id": "org.checkerframework:checker-qual:3.33.0",
               "parent": "com.google.guava:guava:32.1.1-jre",
               "children": []
@@ -194,6 +209,7 @@
       "checksum": "a2644cbfba1baa145ff7e8c8ef582a6eed7a7ec4ca792f7f054122bdec756268",
       "scope": "runtime",
       "selectedVersion": "42.7.3",
+      "included": true,
       "id": "org.postgresql:postgresql:42.7.3",
       "children": [
         {
@@ -204,6 +220,7 @@
           "checksum": "ccaedd33af0b7894d9f2f3b644f4d19e43928e32902e61ac4d10777830f5aac7",
           "scope": "runtime",
           "selectedVersion": "3.42.0",
+          "included": true,
           "id": "org.checkerframework:checker-qual:3.42.0",
           "parent": "org.postgresql:postgresql:42.7.3",
           "children": []
@@ -218,6 +235,7 @@
       "checksum": "3e99516e8586609186db24c1dffd74293c743f1cb68883f3526e1ec2018803bd",
       "scope": "compile",
       "selectedVersion": "3.2.4",
+      "included": true,
       "id": "org.springframework.boot:spring-boot-starter-actuator:3.2.4",
       "children": [
         {
@@ -228,6 +246,7 @@
           "checksum": "6dfa049d466e03957047efcb2c0a18156268aebc9d534690e3cc5a9b5454322e",
           "scope": "compile",
           "selectedVersion": "1.12.4",
+          "included": true,
           "id": "io.micrometer:micrometer-jakarta9:1.12.4",
           "parent": "org.springframework.boot:spring-boot-starter-actuator:3.2.4",
           "children": [
@@ -239,6 +258,7 @@
               "checksum": "62e46f3b46e234e38f8333cf3e3a5ff54d0a9f3ca890e4b9773674d180c36914",
               "scope": "compile",
               "selectedVersion": "1.12.4",
+              "included": false,
               "id": "io.micrometer:micrometer-commons:1.12.4",
               "parent": "io.micrometer:micrometer-jakarta9:1.12.4",
               "children": []
@@ -251,6 +271,7 @@
               "checksum": "c21578df66f9303154aa24eeb82ea8e6b2c2fd19850866b4cbe51dc9690a2401",
               "scope": "compile",
               "selectedVersion": "1.12.4",
+              "included": true,
               "id": "io.micrometer:micrometer-core:1.12.4",
               "parent": "io.micrometer:micrometer-jakarta9:1.12.4",
               "children": [
@@ -262,6 +283,7 @@
                   "checksum": "62e46f3b46e234e38f8333cf3e3a5ff54d0a9f3ca890e4b9773674d180c36914",
                   "scope": "compile",
                   "selectedVersion": "1.12.4",
+                  "included": false,
                   "id": "io.micrometer:micrometer-commons:1.12.4",
                   "parent": "io.micrometer:micrometer-core:1.12.4",
                   "children": []
@@ -274,6 +296,7 @@
                   "checksum": "51a670bb33cf979bca49b46391bd744c3a4e23699d0a305c2134ef0d01a910f3",
                   "scope": "compile",
                   "selectedVersion": "1.12.4",
+                  "included": false,
                   "id": "io.micrometer:micrometer-observation:1.12.4",
                   "parent": "io.micrometer:micrometer-core:1.12.4",
                   "children": []
@@ -286,6 +309,7 @@
                   "checksum": "9b47fbae444feaac4b7e04f0ea294569e4bc282bc69d8c2ce2ac3f23577281e2",
                   "scope": "runtime",
                   "selectedVersion": "2.1.12",
+                  "included": true,
                   "id": "org.hdrhistogram:HdrHistogram:2.1.12",
                   "parent": "io.micrometer:micrometer-core:1.12.4",
                   "children": []
@@ -298,6 +322,7 @@
                   "checksum": "a32a9ffa06b2f4e01c5360f8f9df7bc5d9454a5d373cd8f361347fa5a57165ec",
                   "scope": "runtime",
                   "selectedVersion": "2.0.3",
+                  "included": true,
                   "id": "org.latencyutils:LatencyUtils:2.0.3",
                   "parent": "io.micrometer:micrometer-core:1.12.4",
                   "children": []
@@ -312,6 +337,7 @@
               "checksum": "51a670bb33cf979bca49b46391bd744c3a4e23699d0a305c2134ef0d01a910f3",
               "scope": "compile",
               "selectedVersion": "1.12.4",
+              "included": false,
               "id": "io.micrometer:micrometer-observation:1.12.4",
               "parent": "io.micrometer:micrometer-jakarta9:1.12.4",
               "children": []
@@ -326,6 +352,7 @@
           "checksum": "51a670bb33cf979bca49b46391bd744c3a4e23699d0a305c2134ef0d01a910f3",
           "scope": "compile",
           "selectedVersion": "1.12.4",
+          "included": true,
           "id": "io.micrometer:micrometer-observation:1.12.4",
           "parent": "org.springframework.boot:spring-boot-starter-actuator:3.2.4",
           "children": [
@@ -337,6 +364,7 @@
               "checksum": "62e46f3b46e234e38f8333cf3e3a5ff54d0a9f3ca890e4b9773674d180c36914",
               "scope": "compile",
               "selectedVersion": "1.12.4",
+              "included": true,
               "id": "io.micrometer:micrometer-commons:1.12.4",
               "parent": "io.micrometer:micrometer-observation:1.12.4",
               "children": []
@@ -351,6 +379,7 @@
           "checksum": "426f0297cbb05fb819d52482a781682a2bca0955123ce81fe267938a1e44d19f",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-actuator-autoconfigure:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-actuator:3.2.4",
           "children": [
@@ -362,6 +391,7 @@
               "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
               "scope": "runtime",
               "selectedVersion": "2.15.4",
+              "included": false,
               "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
               "parent": "org.springframework.boot:spring-boot-actuator-autoconfigure:3.2.4",
               "children": []
@@ -374,6 +404,7 @@
               "checksum": "472498cbba2726012ff82f86fc8feef9593663bda1a695a17db804a63fa733ff",
               "scope": "runtime",
               "selectedVersion": "2.15.4",
+              "included": false,
               "id": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4",
               "parent": "org.springframework.boot:spring-boot-actuator-autoconfigure:3.2.4",
               "children": []
@@ -386,6 +417,7 @@
               "checksum": "f9bbba10663bbe4675264aeb07197629f1bbcac611189f8987a46c82f7ffb95a",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot:3.2.4",
               "parent": "org.springframework.boot:spring-boot-actuator-autoconfigure:3.2.4",
               "children": []
@@ -398,6 +430,7 @@
               "checksum": "dd3986eb91a43af00d5dab03cd1580db2e3d6772eeec4302fdfab2bb501071bf",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": true,
               "id": "org.springframework.boot:spring-boot-actuator:3.2.4",
               "parent": "org.springframework.boot:spring-boot-actuator-autoconfigure:3.2.4",
               "children": [
@@ -409,6 +442,7 @@
                   "checksum": "f9bbba10663bbe4675264aeb07197629f1bbcac611189f8987a46c82f7ffb95a",
                   "scope": "compile",
                   "selectedVersion": "3.2.4",
+                  "included": false,
                   "id": "org.springframework.boot:spring-boot:3.2.4",
                   "parent": "org.springframework.boot:spring-boot-actuator:3.2.4",
                   "children": []
@@ -423,6 +457,7 @@
               "checksum": "14b4694e1a782ea946264a7676da2936d2474abf0f875739b1af5da3bb7ad85b",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-autoconfigure:3.2.4",
               "parent": "org.springframework.boot:spring-boot-actuator-autoconfigure:3.2.4",
               "children": []
@@ -437,6 +472,7 @@
           "checksum": "2fd859463321453117a0f9ddb17d460d4ecc433d10ec10c12e7933e03a5cd6dc",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-starter:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-actuator:3.2.4",
           "children": [
@@ -448,6 +484,7 @@
               "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
               "scope": "compile",
               "selectedVersion": "2.1.1",
+              "included": false,
               "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
               "parent": "org.springframework.boot:spring-boot-starter:3.2.4",
               "children": []
@@ -460,6 +497,7 @@
               "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-core:6.1.5",
               "parent": "org.springframework.boot:spring-boot-starter:3.2.4",
               "children": []
@@ -472,6 +510,7 @@
               "checksum": "f9bbba10663bbe4675264aeb07197629f1bbcac611189f8987a46c82f7ffb95a",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": true,
               "id": "org.springframework.boot:spring-boot:3.2.4",
               "parent": "org.springframework.boot:spring-boot-starter:3.2.4",
               "children": [
@@ -483,6 +522,7 @@
                   "checksum": "8f85eb0abe1e80f62a831f74be135e3cbbe0587a510417af74fdd2e3bea4eec7",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-context:6.1.5",
                   "parent": "org.springframework.boot:spring-boot:3.2.4",
                   "children": []
@@ -495,6 +535,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework.boot:spring-boot:3.2.4",
                   "children": []
@@ -509,6 +550,7 @@
               "checksum": "14b4694e1a782ea946264a7676da2936d2474abf0f875739b1af5da3bb7ad85b",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": true,
               "id": "org.springframework.boot:spring-boot-autoconfigure:3.2.4",
               "parent": "org.springframework.boot:spring-boot-starter:3.2.4",
               "children": [
@@ -520,6 +562,7 @@
                   "checksum": "f9bbba10663bbe4675264aeb07197629f1bbcac611189f8987a46c82f7ffb95a",
                   "scope": "compile",
                   "selectedVersion": "3.2.4",
+                  "included": false,
                   "id": "org.springframework.boot:spring-boot:3.2.4",
                   "parent": "org.springframework.boot:spring-boot-autoconfigure:3.2.4",
                   "children": []
@@ -534,6 +577,7 @@
               "checksum": "1467931448a0817696ae2805b7b8b20bfb082652bf9c4efaed528930dc49389b",
               "scope": "compile",
               "selectedVersion": "2.2",
+              "included": true,
               "id": "org.yaml:snakeyaml:2.2",
               "parent": "org.springframework.boot:spring-boot-starter:3.2.4",
               "children": []
@@ -550,6 +594,7 @@
       "checksum": "b297eae0cedf54905a28c49e570f646b6a3bea6a1df636153b03eef864af8b58",
       "scope": "compile",
       "selectedVersion": "3.2.4",
+      "included": true,
       "id": "org.springframework.boot:spring-boot-starter-data-jpa:3.2.4",
       "children": [
         {
@@ -560,6 +605,7 @@
           "checksum": "a1324b7c80c800826c9a5d74b61b0de768141f967c2b082650cb7bf4675570a7",
           "scope": "compile",
           "selectedVersion": "6.4.4.Final",
+          "included": true,
           "id": "org.hibernate.orm:hibernate-core:6.4.4.Final",
           "parent": "org.springframework.boot:spring-boot-starter-data-jpa:3.2.4",
           "children": [
@@ -571,6 +617,7 @@
               "checksum": "d2fcbd956837a57a1c600dda118d5634136cbd673f30852251e4f0de28fd4ebf",
               "scope": "compile",
               "selectedVersion": "1.6.0",
+              "included": true,
               "id": "com.fasterxml:classmate:1.6.0",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -583,6 +630,7 @@
               "checksum": "dee12fa1787d5523ed1a02d6c63b19e7aef6ac560f7c6d70595db01aa37e041e",
               "scope": "runtime",
               "selectedVersion": "3.1.2",
+              "included": true,
               "id": "io.smallrye:jandex:3.1.2",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -595,6 +643,7 @@
               "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
               "scope": "runtime",
               "selectedVersion": "2.0.1",
+              "included": false,
               "id": "jakarta.inject:jakarta.inject-api:2.0.1",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -607,6 +656,7 @@
               "checksum": "475389446d35c6f46c565728b756dc508c284644ea2690644e0d8e7e339d42fd",
               "scope": "compile",
               "selectedVersion": "3.1.0",
+              "included": true,
               "id": "jakarta.persistence:jakarta.persistence-api:3.1.0",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -619,6 +669,7 @@
               "checksum": "50c0a7c760c13ae6c042acf182b28f0047413db95b4636fb8879bcffab5ba875",
               "scope": "compile",
               "selectedVersion": "2.0.1",
+              "included": true,
               "id": "jakarta.transaction:jakarta.transaction-api:2.0.1",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -631,6 +682,7 @@
               "checksum": "0d6bcfe47763e85047acf7c398336dc84ff85ebcad0a7cb6f3b9d3e981245406",
               "scope": "runtime",
               "selectedVersion": "4.0.2",
+              "included": false,
               "id": "jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -643,6 +695,7 @@
               "checksum": "970636134d61c183b19f8f58fa631e30d2f2abca344b37848a393cac7863dd70",
               "scope": "runtime",
               "selectedVersion": "1.14.12",
+              "included": true,
               "id": "net.bytebuddy:byte-buddy:1.14.12",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -655,6 +708,7 @@
               "checksum": "bd7f7b5d07bc0b047f10915b32ca4bb1de9e57d8049098882e4453c88c076a5d",
               "scope": "compile",
               "selectedVersion": "4.13.0",
+              "included": true,
               "id": "org.antlr:antlr4-runtime:4.13.0",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -667,6 +721,7 @@
               "checksum": "485d8940e76373a7f300815ea5504bf5b726c234425ad30971019d133124cca4",
               "scope": "runtime",
               "selectedVersion": "4.0.5",
+              "included": true,
               "id": "org.glassfish.jaxb:jaxb-runtime:4.0.5",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": [
@@ -678,6 +733,7 @@
                   "checksum": "ad3fd9bf00de3eda9859f70b6cfb011e2fe9904804e16a2665092888ece0fdca",
                   "scope": "runtime",
                   "selectedVersion": "4.0.5",
+                  "included": true,
                   "id": "org.glassfish.jaxb:jaxb-core:4.0.5",
                   "parent": "org.glassfish.jaxb:jaxb-runtime:4.0.5",
                   "children": [
@@ -689,6 +745,7 @@
                       "checksum": "7fd6792361f4dd00f8c56af4a20cecc0066deea4a8f3dec38348af23fc2296ee",
                       "scope": "runtime",
                       "selectedVersion": "4.1.2",
+                      "included": true,
                       "id": "com.sun.istack:istack-commons-runtime:4.1.2",
                       "parent": "org.glassfish.jaxb:jaxb-core:4.0.5",
                       "children": []
@@ -701,6 +758,7 @@
                       "checksum": "01b176d718a169263e78290691fc479977186bcc6b333487325084d6586f4627",
                       "scope": "runtime",
                       "selectedVersion": "2.1.3",
+                      "included": false,
                       "id": "jakarta.activation:jakarta.activation-api:2.1.3",
                       "parent": "org.glassfish.jaxb:jaxb-core:4.0.5",
                       "children": []
@@ -713,6 +771,7 @@
                       "checksum": "0d6bcfe47763e85047acf7c398336dc84ff85ebcad0a7cb6f3b9d3e981245406",
                       "scope": "runtime",
                       "selectedVersion": "4.0.2",
+                      "included": false,
                       "id": "jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
                       "parent": "org.glassfish.jaxb:jaxb-core:4.0.5",
                       "children": []
@@ -725,6 +784,7 @@
                       "checksum": "6dd3bcffc22bce83b07376a0e2e094e4964a3195d4118fb43e380ef35436cc1e",
                       "scope": "runtime",
                       "selectedVersion": "2.0.2",
+                      "included": true,
                       "id": "org.eclipse.angus:angus-activation:2.0.2",
                       "parent": "org.glassfish.jaxb:jaxb-core:4.0.5",
                       "children": [
@@ -736,6 +796,7 @@
                           "checksum": "01b176d718a169263e78290691fc479977186bcc6b333487325084d6586f4627",
                           "scope": "runtime",
                           "selectedVersion": "2.1.3",
+                          "included": false,
                           "id": "jakarta.activation:jakarta.activation-api:2.1.3",
                           "parent": "org.eclipse.angus:angus-activation:2.0.2",
                           "children": []
@@ -750,6 +811,7 @@
                       "checksum": "917355bc451481f30d043b24d123110517966af34383901773882810dca480e5",
                       "scope": "runtime",
                       "selectedVersion": "4.0.5",
+                      "included": true,
                       "id": "org.glassfish.jaxb:txw2:4.0.5",
                       "parent": "org.glassfish.jaxb:jaxb-core:4.0.5",
                       "children": []
@@ -766,6 +828,7 @@
               "checksum": "cd974e0a8481fafdbaf9b4a0f08bb5a6c969b0365482763eedf77e6fd7f493b7",
               "scope": "runtime",
               "selectedVersion": "6.0.6.Final",
+              "included": true,
               "id": "org.hibernate.common:hibernate-commons-annotations:6.0.6.Final",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -778,6 +841,7 @@
               "checksum": "7b119460de174195aca412dfed52ca0bbef0ece26c2d74301b6172cfadf4ff59",
               "scope": "runtime",
               "selectedVersion": "3.5.3.Final",
+              "included": false,
               "id": "org.jboss.logging:jboss-logging:3.5.3.Final",
               "parent": "org.hibernate.orm:hibernate-core:6.4.4.Final",
               "children": []
@@ -792,6 +856,7 @@
           "checksum": "7febbf1c7f485fd9da615b4dfd83c1256411de75cee63f3aa2521841e2f020ed",
           "scope": "compile",
           "selectedVersion": "6.1.5",
+          "included": true,
           "id": "org.springframework:spring-aspects:6.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-data-jpa:3.2.4",
           "children": [
@@ -803,6 +868,7 @@
               "checksum": "cc3397d9d3a114894756fc67779941f5f04b06e32e41aa9408564c671a1504ba",
               "scope": "compile",
               "selectedVersion": "1.9.21",
+              "included": false,
               "id": "org.aspectj:aspectjweaver:1.9.21",
               "parent": "org.springframework:spring-aspects:6.1.5",
               "children": []
@@ -817,6 +883,7 @@
           "checksum": "097b0252b823a7300d87d4c1181ba74b468da253b26b250ca22bd183d84a9583",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-starter-aop:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-data-jpa:3.2.4",
           "children": [
@@ -828,6 +895,7 @@
               "checksum": "cc3397d9d3a114894756fc67779941f5f04b06e32e41aa9408564c671a1504ba",
               "scope": "compile",
               "selectedVersion": "1.9.21",
+              "included": true,
               "id": "org.aspectj:aspectjweaver:1.9.21",
               "parent": "org.springframework.boot:spring-boot-starter-aop:3.2.4",
               "children": []
@@ -840,6 +908,7 @@
               "checksum": "1e03dacb0da992938ef597daa9627104992efcb5a224fcb0ba10761f5603db70",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-aop:6.1.5",
               "parent": "org.springframework.boot:spring-boot-starter-aop:3.2.4",
               "children": [
@@ -851,6 +920,7 @@
                   "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-beans:6.1.5",
                   "parent": "org.springframework:spring-aop:6.1.5",
                   "children": []
@@ -863,6 +933,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework:spring-aop:6.1.5",
                   "children": []
@@ -877,6 +948,7 @@
               "checksum": "2fd859463321453117a0f9ddb17d460d4ecc433d10ec10c12e7933e03a5cd6dc",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-starter:3.2.4",
               "parent": "org.springframework.boot:spring-boot-starter-aop:3.2.4",
               "children": []
@@ -891,6 +963,7 @@
           "checksum": "d5d2f1138909d77e73b72866bfaaa0052c678ef0b2387d97a8fd0f6fdb6f6c26",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-starter-jdbc:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-data-jpa:3.2.4",
           "children": [
@@ -902,6 +975,7 @@
               "checksum": "26d492397e6775b4296737a8919bf04047afe5827fdd2c08b4557595436b3a2b",
               "scope": "compile",
               "selectedVersion": "5.0.1",
+              "included": true,
               "id": "com.zaxxer:HikariCP:5.0.1",
               "parent": "org.springframework.boot:spring-boot-starter-jdbc:3.2.4",
               "children": [
@@ -913,6 +987,7 @@
                   "checksum": "a79502b8abdfbd722846a27691226a4088682d6d35654f9b80e2a9ccacf7ed47",
                   "scope": "compile",
                   "selectedVersion": "2.0.12",
+                  "included": false,
                   "id": "org.slf4j:slf4j-api:2.0.12",
                   "parent": "com.zaxxer:HikariCP:5.0.1",
                   "children": []
@@ -927,6 +1002,7 @@
               "checksum": "121a0243170fc2ecfef9f2a529f9fd09bb465d905eaa0e2982308e64519372d5",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-jdbc:6.1.5",
               "parent": "org.springframework.boot:spring-boot-starter-jdbc:3.2.4",
               "children": [
@@ -938,6 +1014,7 @@
                   "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-beans:6.1.5",
                   "parent": "org.springframework:spring-jdbc:6.1.5",
                   "children": []
@@ -950,6 +1027,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework:spring-jdbc:6.1.5",
                   "children": []
@@ -962,6 +1040,7 @@
                   "checksum": "bbd4376391f4c950960f6bdf4d7dcfc7ce1c40339610468acfafdd03685dad44",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-tx:6.1.5",
                   "parent": "org.springframework:spring-jdbc:6.1.5",
                   "children": []
@@ -976,6 +1055,7 @@
               "checksum": "2fd859463321453117a0f9ddb17d460d4ecc433d10ec10c12e7933e03a5cd6dc",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-starter:3.2.4",
               "parent": "org.springframework.boot:spring-boot-starter-jdbc:3.2.4",
               "children": []
@@ -990,6 +1070,7 @@
           "checksum": "9827852e02118529c74cdbe23dd43269cc5550caa4b00cfe6da8949200fccc9a",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.data:spring-data-jpa:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-data-jpa:3.2.4",
           "children": [
@@ -1001,6 +1082,7 @@
               "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
               "scope": "compile",
               "selectedVersion": "2.1.1",
+              "included": false,
               "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": []
@@ -1013,6 +1095,7 @@
               "checksum": "bd7f7b5d07bc0b047f10915b32ca4bb1de9e57d8049098882e4453c88c076a5d",
               "scope": "compile",
               "selectedVersion": "4.13.0",
+              "included": false,
               "id": "org.antlr:antlr4-runtime:4.13.0",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": []
@@ -1025,6 +1108,7 @@
               "checksum": "a79502b8abdfbd722846a27691226a4088682d6d35654f9b80e2a9ccacf7ed47",
               "scope": "compile",
               "selectedVersion": "2.0.12",
+              "included": true,
               "id": "org.slf4j:slf4j-api:2.0.12",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": []
@@ -1037,6 +1121,7 @@
               "checksum": "1e03dacb0da992938ef597daa9627104992efcb5a224fcb0ba10761f5603db70",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-aop:6.1.5",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": []
@@ -1049,6 +1134,7 @@
               "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-beans:6.1.5",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": []
@@ -1061,6 +1147,7 @@
               "checksum": "8f85eb0abe1e80f62a831f74be135e3cbbe0587a510417af74fdd2e3bea4eec7",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-context:6.1.5",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": [
@@ -1072,6 +1159,7 @@
                   "checksum": "51a670bb33cf979bca49b46391bd744c3a4e23699d0a305c2134ef0d01a910f3",
                   "scope": "compile",
                   "selectedVersion": "1.12.4",
+                  "included": false,
                   "id": "io.micrometer:micrometer-observation:1.12.4",
                   "parent": "org.springframework:spring-context:6.1.5",
                   "children": []
@@ -1084,6 +1172,7 @@
                   "checksum": "1e03dacb0da992938ef597daa9627104992efcb5a224fcb0ba10761f5603db70",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-aop:6.1.5",
                   "parent": "org.springframework:spring-context:6.1.5",
                   "children": []
@@ -1096,6 +1185,7 @@
                   "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-beans:6.1.5",
                   "parent": "org.springframework:spring-context:6.1.5",
                   "children": []
@@ -1108,6 +1198,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework:spring-context:6.1.5",
                   "children": []
@@ -1120,6 +1211,7 @@
                   "checksum": "1f37b50dcaf091a43bb10d946178fff4082674497fd821438327815da14f7fd0",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": true,
                   "id": "org.springframework:spring-expression:6.1.5",
                   "parent": "org.springframework:spring-context:6.1.5",
                   "children": [
@@ -1131,6 +1223,7 @@
                       "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                       "scope": "compile",
                       "selectedVersion": "6.1.5",
+                      "included": false,
                       "id": "org.springframework:spring-core:6.1.5",
                       "parent": "org.springframework:spring-expression:6.1.5",
                       "children": []
@@ -1147,6 +1240,7 @@
               "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-core:6.1.5",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": []
@@ -1159,6 +1253,7 @@
               "checksum": "d4de64f0ec46ca1480b120db55eb953904a7e5c68dabb9dfd9646b9a1d2a82ca",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-orm:6.1.5",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": [
@@ -1170,6 +1265,7 @@
                   "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-beans:6.1.5",
                   "parent": "org.springframework:spring-orm:6.1.5",
                   "children": []
@@ -1182,6 +1278,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework:spring-orm:6.1.5",
                   "children": []
@@ -1194,6 +1291,7 @@
                   "checksum": "121a0243170fc2ecfef9f2a529f9fd09bb465d905eaa0e2982308e64519372d5",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-jdbc:6.1.5",
                   "parent": "org.springframework:spring-orm:6.1.5",
                   "children": []
@@ -1206,6 +1304,7 @@
                   "checksum": "bbd4376391f4c950960f6bdf4d7dcfc7ce1c40339610468acfafdd03685dad44",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-tx:6.1.5",
                   "parent": "org.springframework:spring-orm:6.1.5",
                   "children": []
@@ -1220,6 +1319,7 @@
               "checksum": "bbd4376391f4c950960f6bdf4d7dcfc7ce1c40339610468acfafdd03685dad44",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-tx:6.1.5",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": [
@@ -1231,6 +1331,7 @@
                   "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-beans:6.1.5",
                   "parent": "org.springframework:spring-tx:6.1.5",
                   "children": []
@@ -1243,6 +1344,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework:spring-tx:6.1.5",
                   "children": []
@@ -1257,6 +1359,7 @@
               "checksum": "35d95442ab476e46d9ac4d60074f9b9c30b18c106fd1ec71d1d68c00d8080f6d",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": true,
               "id": "org.springframework.data:spring-data-commons:3.2.4",
               "parent": "org.springframework.data:spring-data-jpa:3.2.4",
               "children": [
@@ -1268,6 +1371,7 @@
                   "checksum": "a79502b8abdfbd722846a27691226a4088682d6d35654f9b80e2a9ccacf7ed47",
                   "scope": "compile",
                   "selectedVersion": "2.0.12",
+                  "included": false,
                   "id": "org.slf4j:slf4j-api:2.0.12",
                   "parent": "org.springframework.data:spring-data-commons:3.2.4",
                   "children": []
@@ -1280,6 +1384,7 @@
                   "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-beans:6.1.5",
                   "parent": "org.springframework.data:spring-data-commons:3.2.4",
                   "children": []
@@ -1292,6 +1397,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework.data:spring-data-commons:3.2.4",
                   "children": []
@@ -1310,6 +1416,7 @@
       "checksum": "b2264e383b9d01f3fa92ba3f72c642d6caae65d76f51b5bdbf49b3a0dbc274e8",
       "scope": "compile",
       "selectedVersion": "3.2.4",
+      "included": true,
       "id": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
       "children": [
         {
@@ -1320,6 +1427,7 @@
           "checksum": "183117586002b222a10571a8dedc0c6889565c66e84261fc9e4b673d70afece4",
           "scope": "compile",
           "selectedVersion": "3.1.5",
+          "included": true,
           "id": "org.glassfish.jersey.containers:jersey-container-servlet:3.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -1331,6 +1439,7 @@
               "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
               "scope": "compile",
               "selectedVersion": "3.1.0",
+              "included": false,
               "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet:3.1.5",
               "children": []
@@ -1343,6 +1452,7 @@
               "checksum": "d0785d1fac629a88d4637e7c2cce76ae1bdf8569d3e8c15625a0c2b27fabe779",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet:3.1.5",
               "children": []
@@ -1355,6 +1465,7 @@
               "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet:3.1.5",
               "children": []
@@ -1367,6 +1478,7 @@
               "checksum": "a9b95e4ecc68ab0642c9c4a650482630edec995bd1a740d6223616a282b05e76",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet:3.1.5",
               "children": []
@@ -1381,6 +1493,7 @@
           "checksum": "d0785d1fac629a88d4637e7c2cce76ae1bdf8569d3e8c15625a0c2b27fabe779",
           "scope": "compile",
           "selectedVersion": "3.1.5",
+          "included": true,
           "id": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -1392,6 +1505,7 @@
               "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
               "scope": "compile",
               "selectedVersion": "2.0.1",
+              "included": true,
               "id": "jakarta.inject:jakarta.inject-api:2.0.1",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
               "children": []
@@ -1404,6 +1518,7 @@
               "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
               "scope": "compile",
               "selectedVersion": "3.1.0",
+              "included": true,
               "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
               "children": []
@@ -1416,6 +1531,7 @@
               "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": true,
               "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
               "children": [
@@ -1427,6 +1543,7 @@
                   "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
                   "scope": "compile",
                   "selectedVersion": "2.1.1",
+                  "included": false,
                   "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
                   "parent": "org.glassfish.jersey.core:jersey-common:3.1.5",
                   "children": []
@@ -1439,6 +1556,7 @@
                   "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
                   "scope": "compile",
                   "selectedVersion": "2.0.1",
+                  "included": false,
                   "id": "jakarta.inject:jakarta.inject-api:2.0.1",
                   "parent": "org.glassfish.jersey.core:jersey-common:3.1.5",
                   "children": []
@@ -1451,6 +1569,7 @@
                   "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
                   "scope": "compile",
                   "selectedVersion": "3.1.0",
+                  "included": false,
                   "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
                   "parent": "org.glassfish.jersey.core:jersey-common:3.1.5",
                   "children": []
@@ -1463,6 +1582,7 @@
                   "checksum": "aab5d7849f7cfcda2cc7c541ba1bd365151d42276f151c825387245dfde3dd74",
                   "scope": "compile",
                   "selectedVersion": "1.0.3",
+                  "included": true,
                   "id": "org.glassfish.hk2:osgi-resource-locator:1.0.3",
                   "parent": "org.glassfish.jersey.core:jersey-common:3.1.5",
                   "children": []
@@ -1477,6 +1597,7 @@
               "checksum": "a9b95e4ecc68ab0642c9c4a650482630edec995bd1a740d6223616a282b05e76",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "parent": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
               "children": []
@@ -1491,6 +1612,7 @@
           "checksum": "a9b95e4ecc68ab0642c9c4a650482630edec995bd1a740d6223616a282b05e76",
           "scope": "compile",
           "selectedVersion": "3.1.5",
+          "included": true,
           "id": "org.glassfish.jersey.core:jersey-server:3.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -1502,6 +1624,7 @@
               "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
               "scope": "compile",
               "selectedVersion": "2.1.1",
+              "included": false,
               "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
               "parent": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "children": []
@@ -1514,6 +1637,7 @@
               "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
               "scope": "compile",
               "selectedVersion": "2.0.1",
+              "included": false,
               "id": "jakarta.inject:jakarta.inject-api:2.0.1",
               "parent": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "children": []
@@ -1526,6 +1650,7 @@
               "checksum": "291c25e6910cc6a7ebd96d4c6baebf6d7c37676c5482c2d96146e901b62c1fc9",
               "scope": "compile",
               "selectedVersion": "3.0.2",
+              "included": true,
               "id": "jakarta.validation:jakarta.validation-api:3.0.2",
               "parent": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "children": []
@@ -1538,6 +1663,7 @@
               "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
               "scope": "compile",
               "selectedVersion": "3.1.0",
+              "included": false,
               "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
               "parent": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "children": []
@@ -1550,6 +1676,7 @@
               "checksum": "e26b824ceb81e0ca4b73c7810448fb5566ef0c17ac871add93a92c291e505243",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": true,
               "id": "org.glassfish.jersey.core:jersey-client:3.1.5",
               "parent": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "children": [
@@ -1561,6 +1688,7 @@
                   "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
                   "scope": "compile",
                   "selectedVersion": "2.0.1",
+                  "included": false,
                   "id": "jakarta.inject:jakarta.inject-api:2.0.1",
                   "parent": "org.glassfish.jersey.core:jersey-client:3.1.5",
                   "children": []
@@ -1573,6 +1701,7 @@
                   "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
                   "scope": "compile",
                   "selectedVersion": "3.1.0",
+                  "included": false,
                   "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
                   "parent": "org.glassfish.jersey.core:jersey-client:3.1.5",
                   "children": []
@@ -1585,6 +1714,7 @@
                   "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
                   "scope": "compile",
                   "selectedVersion": "3.1.5",
+                  "included": false,
                   "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
                   "parent": "org.glassfish.jersey.core:jersey-client:3.1.5",
                   "children": []
@@ -1599,6 +1729,7 @@
               "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
               "parent": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "children": []
@@ -1613,6 +1744,7 @@
           "checksum": "ad2a52476a2205dccb62b98931101849c53107637568ccd5bd4884bde1a69e5b",
           "scope": "compile",
           "selectedVersion": "3.1.5",
+          "included": true,
           "id": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -1624,6 +1756,7 @@
               "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
               "scope": "compile",
               "selectedVersion": "2.0.1",
+              "included": false,
               "id": "jakarta.inject:jakarta.inject-api:2.0.1",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1636,6 +1769,7 @@
               "checksum": "291c25e6910cc6a7ebd96d4c6baebf6d7c37676c5482c2d96146e901b62c1fc9",
               "scope": "compile",
               "selectedVersion": "3.0.2",
+              "included": false,
               "id": "jakarta.validation:jakarta.validation-api:3.0.2",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1648,6 +1782,7 @@
               "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
               "scope": "compile",
               "selectedVersion": "3.1.0",
+              "included": false,
               "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1660,6 +1795,7 @@
               "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1672,6 +1808,7 @@
               "checksum": "a9b95e4ecc68ab0642c9c4a650482630edec995bd1a740d6223616a282b05e76",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1684,6 +1821,7 @@
               "checksum": "8c1244a498231091fe723d9666a93444ee9f93607245c6b29829dc5fe57a335c",
               "scope": "compile",
               "selectedVersion": "8.0.1.Final",
+              "included": false,
               "id": "org.hibernate.validator:hibernate-validator:8.0.1.Final",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1696,6 +1834,7 @@
               "checksum": "7b119460de174195aca412dfed52ca0bbef0ece26c2d74301b6172cfadf4ff59",
               "scope": "compile",
               "selectedVersion": "3.5.3.Final",
+              "included": true,
               "id": "org.jboss.logging:jboss-logging:3.5.3.Final",
               "parent": "org.glassfish.jersey.ext:jersey-bean-validation:3.1.5",
               "children": []
@@ -1710,6 +1849,7 @@
           "checksum": "7c180a68b1f4f571fe1d315ac419aac17cfeecbcea0c229440a67e29d6711afd",
           "scope": "compile",
           "selectedVersion": "3.1.5",
+          "included": true,
           "id": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -1721,6 +1861,7 @@
               "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
               "scope": "compile",
               "selectedVersion": "3.1.0",
+              "included": false,
               "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
               "parent": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
               "children": []
@@ -1733,6 +1874,7 @@
               "checksum": "c0ea8a94deca2c389865517306df15e9f12bd63072862cdc11aad11ce0c70dff",
               "scope": "compile",
               "selectedVersion": "3.0.5",
+              "included": true,
               "id": "org.glassfish.hk2:hk2:3.0.5",
               "parent": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
               "children": [
@@ -1744,6 +1886,7 @@
                   "checksum": "c48ea70cd8c0aea65b5a17e58d704e5406a480630d4cbc48581e6521b42375a8",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": true,
                   "id": "org.glassfish.hk2:class-model:3.0.5",
                   "parent": "org.glassfish.hk2:hk2:3.0.5",
                   "children": [
@@ -1755,6 +1898,7 @@
                       "checksum": "d92832d7c37edc07c60e2559ac6118b31d642e337a6671edcb7ba9fae68edbbb",
                       "scope": "compile",
                       "selectedVersion": "9.6",
+                      "included": true,
                       "id": "org.ow2.asm:asm-analysis:9.6",
                       "parent": "org.glassfish.hk2:class-model:3.0.5",
                       "children": [
@@ -1766,6 +1910,7 @@
                           "checksum": "c43ecf17b539c777e15da7b5b86553b377e2d39a683de6285567d5283888e7ef",
                           "scope": "compile",
                           "selectedVersion": "9.6",
+                          "included": false,
                           "id": "org.ow2.asm:asm-tree:9.6",
                           "parent": "org.ow2.asm:asm-analysis:9.6",
                           "children": []
@@ -1780,6 +1925,7 @@
                       "checksum": "7aefd0d5c0901701c69f7513feda765fb6be33af2ce7aa17c5781fc87657c511",
                       "scope": "compile",
                       "selectedVersion": "9.6",
+                      "included": true,
                       "id": "org.ow2.asm:asm-commons:9.6",
                       "parent": "org.glassfish.hk2:class-model:3.0.5",
                       "children": [
@@ -1791,6 +1937,7 @@
                           "checksum": "c43ecf17b539c777e15da7b5b86553b377e2d39a683de6285567d5283888e7ef",
                           "scope": "compile",
                           "selectedVersion": "9.6",
+                          "included": false,
                           "id": "org.ow2.asm:asm-tree:9.6",
                           "parent": "org.ow2.asm:asm-commons:9.6",
                           "children": []
@@ -1805,6 +1952,7 @@
                       "checksum": "c43ecf17b539c777e15da7b5b86553b377e2d39a683de6285567d5283888e7ef",
                       "scope": "compile",
                       "selectedVersion": "9.6",
+                      "included": true,
                       "id": "org.ow2.asm:asm-tree:9.6",
                       "parent": "org.glassfish.hk2:class-model:3.0.5",
                       "children": []
@@ -1817,6 +1965,7 @@
                       "checksum": "c635a7402f4aa9bf66b2f4230cea62025a0fe1cd63e8729adefc9b1994fac4c3",
                       "scope": "compile",
                       "selectedVersion": "9.6",
+                      "included": true,
                       "id": "org.ow2.asm:asm-util:9.6",
                       "parent": "org.glassfish.hk2:class-model:3.0.5",
                       "children": [
@@ -1828,6 +1977,7 @@
                           "checksum": "d92832d7c37edc07c60e2559ac6118b31d642e337a6671edcb7ba9fae68edbbb",
                           "scope": "compile",
                           "selectedVersion": "9.6",
+                          "included": false,
                           "id": "org.ow2.asm:asm-analysis:9.6",
                           "parent": "org.ow2.asm:asm-util:9.6",
                           "children": []
@@ -1840,6 +1990,7 @@
                           "checksum": "c43ecf17b539c777e15da7b5b86553b377e2d39a683de6285567d5283888e7ef",
                           "scope": "compile",
                           "selectedVersion": "9.6",
+                          "included": false,
                           "id": "org.ow2.asm:asm-tree:9.6",
                           "parent": "org.ow2.asm:asm-util:9.6",
                           "children": []
@@ -1856,6 +2007,7 @@
                   "checksum": "0b8e548172f10381ad61ce8afaf205a1992dc4ea9a95b9008c3666de72d21b0d",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": true,
                   "id": "org.glassfish.hk2:hk2-api:3.0.5",
                   "parent": "org.glassfish.hk2:hk2:3.0.5",
                   "children": [
@@ -1867,6 +2019,7 @@
                       "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
                       "scope": "compile",
                       "selectedVersion": "2.0.1",
+                      "included": false,
                       "id": "jakarta.inject:jakarta.inject-api:2.0.1",
                       "parent": "org.glassfish.hk2:hk2-api:3.0.5",
                       "children": []
@@ -1879,6 +2032,7 @@
                       "checksum": "af43ea4ae1e05f3860bc5f2e23202bdd2106b7947a8ecd7b1fd3994daa78babb",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-utils:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-api:3.0.5",
                       "children": []
@@ -1891,6 +2045,7 @@
                       "checksum": "433e4b8292064c96625eee2106eb2fd7fc50b839c2f0742977563331ad9d5935",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2.external:aopalliance-repackaged:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-api:3.0.5",
                       "children": []
@@ -1905,6 +2060,7 @@
                   "checksum": "dcaa299f89a4ffb5b8ff619a386a7198d228eb244546cb8612df1fb8c824196a",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": true,
                   "id": "org.glassfish.hk2:hk2-core:3.0.5",
                   "parent": "org.glassfish.hk2:hk2:3.0.5",
                   "children": [
@@ -1916,6 +2072,7 @@
                       "checksum": "b052277dbdcaef810f1b42b10e9416c23e7ccfa0c195b0a5344d80cc178631ec",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-locator:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-core:3.0.5",
                       "children": []
@@ -1928,6 +2085,7 @@
                       "checksum": "af43ea4ae1e05f3860bc5f2e23202bdd2106b7947a8ecd7b1fd3994daa78babb",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-utils:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-core:3.0.5",
                       "children": []
@@ -1942,6 +2100,7 @@
                   "checksum": "b052277dbdcaef810f1b42b10e9416c23e7ccfa0c195b0a5344d80cc178631ec",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": false,
                   "id": "org.glassfish.hk2:hk2-locator:3.0.5",
                   "parent": "org.glassfish.hk2:hk2:3.0.5",
                   "children": []
@@ -1954,6 +2113,7 @@
                   "checksum": "6904f31fac58f729fb242dae044b6da588c0ca780bb2e9c1eac0d186b3fbc915",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": true,
                   "id": "org.glassfish.hk2:hk2-runlevel:3.0.5",
                   "parent": "org.glassfish.hk2:hk2:3.0.5",
                   "children": [
@@ -1965,6 +2125,7 @@
                       "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
                       "scope": "compile",
                       "selectedVersion": "2.1.1",
+                      "included": false,
                       "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
                       "parent": "org.glassfish.hk2:hk2-runlevel:3.0.5",
                       "children": []
@@ -1977,6 +2138,7 @@
                       "checksum": "0b8e548172f10381ad61ce8afaf205a1992dc4ea9a95b9008c3666de72d21b0d",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-api:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-runlevel:3.0.5",
                       "children": []
@@ -1989,6 +2151,7 @@
                       "checksum": "b052277dbdcaef810f1b42b10e9416c23e7ccfa0c195b0a5344d80cc178631ec",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-locator:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-runlevel:3.0.5",
                       "children": []
@@ -2003,6 +2166,7 @@
                   "checksum": "af43ea4ae1e05f3860bc5f2e23202bdd2106b7947a8ecd7b1fd3994daa78babb",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": true,
                   "id": "org.glassfish.hk2:hk2-utils:3.0.5",
                   "parent": "org.glassfish.hk2:hk2:3.0.5",
                   "children": [
@@ -2014,6 +2178,7 @@
                       "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
                       "scope": "compile",
                       "selectedVersion": "2.1.1",
+                      "included": false,
                       "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
                       "parent": "org.glassfish.hk2:hk2-utils:3.0.5",
                       "children": []
@@ -2026,6 +2191,7 @@
                       "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
                       "scope": "compile",
                       "selectedVersion": "2.0.1",
+                      "included": false,
                       "id": "jakarta.inject:jakarta.inject-api:2.0.1",
                       "parent": "org.glassfish.hk2:hk2-utils:3.0.5",
                       "children": []
@@ -2042,6 +2208,7 @@
               "checksum": "acf2318b4ebe4e01f1a4e3ff95b24f454e621af3dc6466809848c2244f3f7d37",
               "scope": "compile",
               "selectedVersion": "3.0.5",
+              "included": true,
               "id": "org.glassfish.hk2:spring-bridge:3.0.5",
               "parent": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
               "children": [
@@ -2053,6 +2220,7 @@
                   "checksum": "f7dc98062fccf14126abb751b64fab12c312566e8cbdc8483598bffcea93af7c",
                   "scope": "compile",
                   "selectedVersion": "2.0.1",
+                  "included": false,
                   "id": "jakarta.inject:jakarta.inject-api:2.0.1",
                   "parent": "org.glassfish.hk2:spring-bridge:3.0.5",
                   "children": []
@@ -2067,6 +2235,7 @@
               "checksum": "d0785d1fac629a88d4637e7c2cce76ae1bdf8569d3e8c15625a0c2b27fabe779",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.containers:jersey-container-servlet-core:3.1.5",
               "parent": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
               "children": []
@@ -2079,6 +2248,7 @@
               "checksum": "a9b95e4ecc68ab0642c9c4a650482630edec995bd1a740d6223616a282b05e76",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-server:3.1.5",
               "parent": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
               "children": []
@@ -2091,6 +2261,7 @@
               "checksum": "0c9496cfc6b4f9b223c44c83b4df3edea7924ce4d52bffb55cf180e9ec4b4eeb",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": true,
               "id": "org.glassfish.jersey.inject:jersey-hk2:3.1.5",
               "parent": "org.glassfish.jersey.ext:jersey-spring6:3.1.5",
               "children": [
@@ -2102,6 +2273,7 @@
                   "checksum": "b052277dbdcaef810f1b42b10e9416c23e7ccfa0c195b0a5344d80cc178631ec",
                   "scope": "compile",
                   "selectedVersion": "3.0.5",
+                  "included": true,
                   "id": "org.glassfish.hk2:hk2-locator:3.0.5",
                   "parent": "org.glassfish.jersey.inject:jersey-hk2:3.1.5",
                   "children": [
@@ -2113,6 +2285,7 @@
                       "checksum": "0b8e548172f10381ad61ce8afaf205a1992dc4ea9a95b9008c3666de72d21b0d",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-api:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-locator:3.0.5",
                       "children": []
@@ -2125,6 +2298,7 @@
                       "checksum": "af43ea4ae1e05f3860bc5f2e23202bdd2106b7947a8ecd7b1fd3994daa78babb",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": false,
                       "id": "org.glassfish.hk2:hk2-utils:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-locator:3.0.5",
                       "children": []
@@ -2137,6 +2311,7 @@
                       "checksum": "433e4b8292064c96625eee2106eb2fd7fc50b839c2f0742977563331ad9d5935",
                       "scope": "compile",
                       "selectedVersion": "3.0.5",
+                      "included": true,
                       "id": "org.glassfish.hk2.external:aopalliance-repackaged:3.0.5",
                       "parent": "org.glassfish.hk2:hk2-locator:3.0.5",
                       "children": []
@@ -2151,6 +2326,7 @@
                   "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
                   "scope": "compile",
                   "selectedVersion": "3.1.5",
+                  "included": false,
                   "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
                   "parent": "org.glassfish.jersey.inject:jersey-hk2:3.1.5",
                   "children": []
@@ -2163,6 +2339,7 @@
                   "checksum": "a90ddb25135df9e57ea9bd4e224e219554929758f9bae9965f29f81d60a3293f",
                   "scope": "compile",
                   "selectedVersion": "3.29.2-GA",
+                  "included": true,
                   "id": "org.javassist:javassist:3.29.2-GA",
                   "parent": "org.glassfish.jersey.inject:jersey-hk2:3.1.5",
                   "children": []
@@ -2179,6 +2356,7 @@
           "checksum": "b277d7005661acb1d846cb7b59c3feeaf91bbfe5c1a97d00003335d72b3ab133",
           "scope": "compile",
           "selectedVersion": "3.1.5",
+          "included": true,
           "id": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -2190,6 +2368,7 @@
               "checksum": "f204ebbd552614a22b8531ffe350d47f8fd42c45bb60517c07974dc27a5a1dd3",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": true,
               "id": "com.fasterxml.jackson.core:jackson-annotations:2.15.4",
               "parent": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
               "children": []
@@ -2202,6 +2381,7 @@
               "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": false,
               "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
               "parent": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
               "children": []
@@ -2214,6 +2394,7 @@
               "checksum": "db4a1f855bc4252e0a7caf54af92fbbe465459f9809e9ab4b53da80fa5353dc3",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": true,
               "id": "com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.15.4",
               "parent": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
               "children": [
@@ -2225,6 +2406,7 @@
                   "checksum": "f204ebbd552614a22b8531ffe350d47f8fd42c45bb60517c07974dc27a5a1dd3",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-annotations:2.15.4",
                   "parent": "com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.15.4",
                   "children": []
@@ -2237,6 +2419,7 @@
                   "checksum": "8dc9210dd285db366f45f518dd1e6a9ccfeb0f1a8e184a899fe96d29edf1fd94",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-core:2.15.4",
                   "parent": "com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.15.4",
                   "children": []
@@ -2249,6 +2432,7 @@
                   "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
                   "parent": "com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.15.4",
                   "children": []
@@ -2263,6 +2447,7 @@
               "checksum": "0d6bcfe47763e85047acf7c398336dc84ff85ebcad0a7cb6f3b9d3e981245406",
               "scope": "compile",
               "selectedVersion": "4.0.2",
+              "included": false,
               "id": "jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
               "parent": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
               "children": []
@@ -2275,6 +2460,7 @@
               "checksum": "c7258f374433df583e50bbe5583fd6d6694393a322915024f719d21a218dc012",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": false,
               "id": "org.glassfish.jersey.core:jersey-common:3.1.5",
               "parent": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
               "children": []
@@ -2287,6 +2473,7 @@
               "checksum": "b836a2d99a7f8f91679c705abbbb151de2df3c49525efb893b26a7497193fe9b",
               "scope": "compile",
               "selectedVersion": "3.1.5",
+              "included": true,
               "id": "org.glassfish.jersey.ext:jersey-entity-filtering:3.1.5",
               "parent": "org.glassfish.jersey.media:jersey-media-json-jackson:3.1.5",
               "children": [
@@ -2298,6 +2485,7 @@
                   "checksum": "6b3b3628b8b4aedda0d24c3354335e985497d8ef3c510b8f3028e920d5b8663d",
                   "scope": "compile",
                   "selectedVersion": "3.1.0",
+                  "included": false,
                   "id": "jakarta.ws.rs:jakarta.ws.rs-api:3.1.0",
                   "parent": "org.glassfish.jersey.ext:jersey-entity-filtering:3.1.5",
                   "children": []
@@ -2314,6 +2502,7 @@
           "checksum": "b9faabe70744346ded2ef8bb7aa8f72e637622948788d00fc5d1e0f2647cefb2",
           "scope": "compile",
           "selectedVersion": "6.1.5",
+          "included": true,
           "id": "org.springframework:spring-web:6.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -2325,6 +2514,7 @@
               "checksum": "51a670bb33cf979bca49b46391bd744c3a4e23699d0a305c2134ef0d01a910f3",
               "scope": "compile",
               "selectedVersion": "1.12.4",
+              "included": false,
               "id": "io.micrometer:micrometer-observation:1.12.4",
               "parent": "org.springframework:spring-web:6.1.5",
               "children": []
@@ -2337,6 +2527,7 @@
               "checksum": "bdcf61036293fc3475272e743b625d679e06d152b781134951c907b185f0f5f1",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-beans:6.1.5",
               "parent": "org.springframework:spring-web:6.1.5",
               "children": [
@@ -2348,6 +2539,7 @@
                   "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
                   "scope": "compile",
                   "selectedVersion": "6.1.5",
+                  "included": false,
                   "id": "org.springframework:spring-core:6.1.5",
                   "parent": "org.springframework:spring-beans:6.1.5",
                   "children": []
@@ -2362,6 +2554,7 @@
               "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-core:6.1.5",
               "parent": "org.springframework:spring-web:6.1.5",
               "children": []
@@ -2376,6 +2569,7 @@
           "checksum": "f48d50ea19f3198d32ef3557bd572b5fe2704a9ad6239da56d1cce41dfad432e",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-starter-json:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -2387,6 +2581,7 @@
               "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": false,
               "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
               "parent": "org.springframework.boot:spring-boot-starter-json:3.2.4",
               "children": []
@@ -2399,6 +2594,7 @@
               "checksum": "3efb9d55b62f50e64b11fe00625800285fef8781736b80bd206677fb56040aac",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": true,
               "id": "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4",
               "parent": "org.springframework.boot:spring-boot-starter-json:3.2.4",
               "children": [
@@ -2410,6 +2606,7 @@
                   "checksum": "8dc9210dd285db366f45f518dd1e6a9ccfeb0f1a8e184a899fe96d29edf1fd94",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-core:2.15.4",
                   "parent": "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4",
                   "children": []
@@ -2422,6 +2619,7 @@
                   "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
                   "parent": "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.15.4",
                   "children": []
@@ -2436,6 +2634,7 @@
               "checksum": "472498cbba2726012ff82f86fc8feef9593663bda1a695a17db804a63fa733ff",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": true,
               "id": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4",
               "parent": "org.springframework.boot:spring-boot-starter-json:3.2.4",
               "children": [
@@ -2447,6 +2646,7 @@
                   "checksum": "f204ebbd552614a22b8531ffe350d47f8fd42c45bb60517c07974dc27a5a1dd3",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-annotations:2.15.4",
                   "parent": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4",
                   "children": []
@@ -2459,6 +2659,7 @@
                   "checksum": "8dc9210dd285db366f45f518dd1e6a9ccfeb0f1a8e184a899fe96d29edf1fd94",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-core:2.15.4",
                   "parent": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4",
                   "children": []
@@ -2471,6 +2672,7 @@
                   "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
                   "parent": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.4",
                   "children": []
@@ -2485,6 +2687,7 @@
               "checksum": "a620ee11f89deae6e2ce6cd5a64d9f2d1480bf08b45ec2f0730bddf9177f37fc",
               "scope": "compile",
               "selectedVersion": "2.15.4",
+              "included": true,
               "id": "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4",
               "parent": "org.springframework.boot:spring-boot-starter-json:3.2.4",
               "children": [
@@ -2496,6 +2699,7 @@
                   "checksum": "8dc9210dd285db366f45f518dd1e6a9ccfeb0f1a8e184a899fe96d29edf1fd94",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-core:2.15.4",
                   "parent": "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4",
                   "children": []
@@ -2508,6 +2712,7 @@
                   "checksum": "0f99ff7719eef3ee85608b3dee6ecf3c698003fe9d6e34eabbfabccdc9b5ac2c",
                   "scope": "compile",
                   "selectedVersion": "2.15.4",
+                  "included": false,
                   "id": "com.fasterxml.jackson.core:jackson-databind:2.15.4",
                   "parent": "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.4",
                   "children": []
@@ -2522,6 +2727,7 @@
               "checksum": "b9faabe70744346ded2ef8bb7aa8f72e637622948788d00fc5d1e0f2647cefb2",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-web:6.1.5",
               "parent": "org.springframework.boot:spring-boot-starter-json:3.2.4",
               "children": []
@@ -2534,6 +2740,7 @@
               "checksum": "2fd859463321453117a0f9ddb17d460d4ecc433d10ec10c12e7933e03a5cd6dc",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-starter:3.2.4",
               "parent": "org.springframework.boot:spring-boot-starter-json:3.2.4",
               "children": []
@@ -2548,6 +2755,7 @@
           "checksum": "a51c8879be5369ab2c2f8724e1b6ce79ae20233df574ec715e097a46a2a58a5e",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-starter-tomcat:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -2559,6 +2767,7 @@
               "checksum": "5f65fdaf424eee2b55e1d882ba9bb376be93fb09b37b808be6e22e8851c909fe",
               "scope": "compile",
               "selectedVersion": "2.1.1",
+              "included": true,
               "id": "jakarta.annotation:jakarta.annotation-api:2.1.1",
               "parent": "org.springframework.boot:spring-boot-starter-tomcat:3.2.4",
               "children": []
@@ -2571,6 +2780,7 @@
               "checksum": "ca35025eda35fbef0798ed4ae79d0fbfa11d0a7a4d82fffd3e1a2bfa34abddbe",
               "scope": "compile",
               "selectedVersion": "10.1.19",
+              "included": true,
               "id": "org.apache.tomcat.embed:tomcat-embed-core:10.1.19",
               "parent": "org.springframework.boot:spring-boot-starter-tomcat:3.2.4",
               "children": []
@@ -2583,6 +2793,7 @@
               "checksum": "acd1b9ad8c60c72c99b5ed01d3ef6747f85be6c51b5b045a365686de889bfae4",
               "scope": "compile",
               "selectedVersion": "10.1.19",
+              "included": true,
               "id": "org.apache.tomcat.embed:tomcat-embed-el:10.1.19",
               "parent": "org.springframework.boot:spring-boot-starter-tomcat:3.2.4",
               "children": []
@@ -2595,6 +2806,7 @@
               "checksum": "c620bc4bbe425fb93c503cf4ba6106c21c8e2390d8b8b314523e4f3193074c67",
               "scope": "compile",
               "selectedVersion": "10.1.19",
+              "included": true,
               "id": "org.apache.tomcat.embed:tomcat-embed-websocket:10.1.19",
               "parent": "org.springframework.boot:spring-boot-starter-tomcat:3.2.4",
               "children": [
@@ -2606,6 +2818,7 @@
                   "checksum": "ca35025eda35fbef0798ed4ae79d0fbfa11d0a7a4d82fffd3e1a2bfa34abddbe",
                   "scope": "compile",
                   "selectedVersion": "10.1.19",
+                  "included": false,
                   "id": "org.apache.tomcat.embed:tomcat-embed-core:10.1.19",
                   "parent": "org.apache.tomcat.embed:tomcat-embed-websocket:10.1.19",
                   "children": []
@@ -2622,6 +2835,7 @@
           "checksum": "363ff168093229c60f197f285861cf6f0a430266abd7e83eae0181cfcd89987c",
           "scope": "compile",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-starter-validation:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-jersey:3.2.4",
           "children": [
@@ -2633,6 +2847,7 @@
               "checksum": "acd1b9ad8c60c72c99b5ed01d3ef6747f85be6c51b5b045a365686de889bfae4",
               "scope": "compile",
               "selectedVersion": "10.1.19",
+              "included": false,
               "id": "org.apache.tomcat.embed:tomcat-embed-el:10.1.19",
               "parent": "org.springframework.boot:spring-boot-starter-validation:3.2.4",
               "children": []
@@ -2645,6 +2860,7 @@
               "checksum": "8c1244a498231091fe723d9666a93444ee9f93607245c6b29829dc5fe57a335c",
               "scope": "compile",
               "selectedVersion": "8.0.1.Final",
+              "included": true,
               "id": "org.hibernate.validator:hibernate-validator:8.0.1.Final",
               "parent": "org.springframework.boot:spring-boot-starter-validation:3.2.4",
               "children": [
@@ -2656,6 +2872,7 @@
                   "checksum": "d2fcbd956837a57a1c600dda118d5634136cbd673f30852251e4f0de28fd4ebf",
                   "scope": "compile",
                   "selectedVersion": "1.6.0",
+                  "included": false,
                   "id": "com.fasterxml:classmate:1.6.0",
                   "parent": "org.hibernate.validator:hibernate-validator:8.0.1.Final",
                   "children": []
@@ -2668,6 +2885,7 @@
                   "checksum": "291c25e6910cc6a7ebd96d4c6baebf6d7c37676c5482c2d96146e901b62c1fc9",
                   "scope": "compile",
                   "selectedVersion": "3.0.2",
+                  "included": false,
                   "id": "jakarta.validation:jakarta.validation-api:3.0.2",
                   "parent": "org.hibernate.validator:hibernate-validator:8.0.1.Final",
                   "children": []
@@ -2680,6 +2898,7 @@
                   "checksum": "7b119460de174195aca412dfed52ca0bbef0ece26c2d74301b6172cfadf4ff59",
                   "scope": "compile",
                   "selectedVersion": "3.5.3.Final",
+                  "included": false,
                   "id": "org.jboss.logging:jboss-logging:3.5.3.Final",
                   "parent": "org.hibernate.validator:hibernate-validator:8.0.1.Final",
                   "children": []
@@ -2694,6 +2913,7 @@
               "checksum": "2fd859463321453117a0f9ddb17d460d4ecc433d10ec10c12e7933e03a5cd6dc",
               "scope": "compile",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-starter:3.2.4",
               "parent": "org.springframework.boot:spring-boot-starter-validation:3.2.4",
               "children": []
@@ -2710,6 +2930,7 @@
       "checksum": "04bc0df306e04c8469f3b7fc2abdea9ed45766ce32745836cf6c48e8b12de83e",
       "scope": "compile",
       "selectedVersion": "3.2.4",
+      "included": true,
       "id": "org.springframework.boot:spring-boot-starter-log4j2:3.2.4",
       "children": [
         {
@@ -2720,6 +2941,7 @@
           "checksum": "ad00ba17c77ff3efd7e461cedf3b825888cea95abe343467c8adb5e3912a72a1",
           "scope": "compile",
           "selectedVersion": "2.21.1",
+          "included": true,
           "id": "org.apache.logging.log4j:log4j-core:2.21.1",
           "parent": "org.springframework.boot:spring-boot-starter-log4j2:3.2.4",
           "children": [
@@ -2731,6 +2953,7 @@
               "checksum": "1db48e180881bef1deb502022006a025a248d8f6a26186789b0c7ce487c602d6",
               "scope": "compile",
               "selectedVersion": "2.21.1",
+              "included": false,
               "id": "org.apache.logging.log4j:log4j-api:2.21.1",
               "parent": "org.apache.logging.log4j:log4j-core:2.21.1",
               "children": []
@@ -2745,6 +2968,7 @@
           "checksum": "d4b7237735c3a894c80feed86b3466f6ab9d6d83855b57a4eb89a8cb0b2fbb43",
           "scope": "compile",
           "selectedVersion": "2.21.1",
+          "included": true,
           "id": "org.apache.logging.log4j:log4j-jul:2.21.1",
           "parent": "org.springframework.boot:spring-boot-starter-log4j2:3.2.4",
           "children": [
@@ -2756,6 +2980,7 @@
               "checksum": "1db48e180881bef1deb502022006a025a248d8f6a26186789b0c7ce487c602d6",
               "scope": "compile",
               "selectedVersion": "2.21.1",
+              "included": false,
               "id": "org.apache.logging.log4j:log4j-api:2.21.1",
               "parent": "org.apache.logging.log4j:log4j-jul:2.21.1",
               "children": []
@@ -2770,6 +2995,7 @@
           "checksum": "bbf4b90d92d4363018dec0e071465a09925960e64452b4b0c7af31e13277e7e5",
           "scope": "compile",
           "selectedVersion": "2.21.1",
+          "included": true,
           "id": "org.apache.logging.log4j:log4j-slf4j2-impl:2.21.1",
           "parent": "org.springframework.boot:spring-boot-starter-log4j2:3.2.4",
           "children": [
@@ -2781,6 +3007,7 @@
               "checksum": "1db48e180881bef1deb502022006a025a248d8f6a26186789b0c7ce487c602d6",
               "scope": "compile",
               "selectedVersion": "2.21.1",
+              "included": true,
               "id": "org.apache.logging.log4j:log4j-api:2.21.1",
               "parent": "org.apache.logging.log4j:log4j-slf4j2-impl:2.21.1",
               "children": []
@@ -2793,6 +3020,7 @@
               "checksum": "ad00ba17c77ff3efd7e461cedf3b825888cea95abe343467c8adb5e3912a72a1",
               "scope": "runtime",
               "selectedVersion": "2.21.1",
+              "included": false,
               "id": "org.apache.logging.log4j:log4j-core:2.21.1",
               "parent": "org.apache.logging.log4j:log4j-slf4j2-impl:2.21.1",
               "children": []
@@ -2805,6 +3033,7 @@
               "checksum": "a79502b8abdfbd722846a27691226a4088682d6d35654f9b80e2a9ccacf7ed47",
               "scope": "compile",
               "selectedVersion": "2.0.12",
+              "included": false,
               "id": "org.slf4j:slf4j-api:2.0.12",
               "parent": "org.apache.logging.log4j:log4j-slf4j2-impl:2.21.1",
               "children": []
@@ -2821,6 +3050,7 @@
       "checksum": "ae888862b7df13c01b22320105a4192cce68d8574123659f08c7b7aeb2b9d4d0",
       "scope": "test",
       "selectedVersion": "3.2.4",
+      "included": true,
       "id": "org.springframework.boot:spring-boot-starter-test:3.2.4",
       "children": [
         {
@@ -2831,6 +3061,7 @@
           "checksum": "11a9ee6f88bb31f1450108d1cf6441377dec84aca075eb6bb2343be157575bea",
           "scope": "test",
           "selectedVersion": "2.9.0",
+          "included": true,
           "id": "com.jayway.jsonpath:json-path:2.9.0",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -2842,6 +3073,7 @@
               "checksum": "432b9e545848c4141b80717b26e367f83bf33f19250a228ce75da6e967da2bc7",
               "scope": "test",
               "selectedVersion": "2.5.0",
+              "included": false,
               "id": "net.minidev:json-smart:2.5.0",
               "parent": "com.jayway.jsonpath:json-path:2.9.0",
               "children": []
@@ -2854,6 +3086,7 @@
               "checksum": "a79502b8abdfbd722846a27691226a4088682d6d35654f9b80e2a9ccacf7ed47",
               "scope": "test",
               "selectedVersion": "2.0.12",
+              "included": false,
               "id": "org.slf4j:slf4j-api:2.0.12",
               "parent": "com.jayway.jsonpath:json-path:2.9.0",
               "children": []
@@ -2868,6 +3101,7 @@
           "checksum": "0d6bcfe47763e85047acf7c398336dc84ff85ebcad0a7cb6f3b9d3e981245406",
           "scope": "compile",
           "selectedVersion": "4.0.2",
+          "included": true,
           "id": "jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -2879,6 +3113,7 @@
               "checksum": "01b176d718a169263e78290691fc479977186bcc6b333487325084d6586f4627",
               "scope": "compile",
               "selectedVersion": "2.1.3",
+              "included": true,
               "id": "jakarta.activation:jakarta.activation-api:2.1.3",
               "parent": "jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
               "children": []
@@ -2893,6 +3128,7 @@
           "checksum": "432b9e545848c4141b80717b26e367f83bf33f19250a228ce75da6e967da2bc7",
           "scope": "test",
           "selectedVersion": "2.5.0",
+          "included": true,
           "id": "net.minidev:json-smart:2.5.0",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -2904,6 +3140,7 @@
               "checksum": "12314fc6881d66a413fd66370787adba16e504fbf7e138690b0f3952e3fbd321",
               "scope": "test",
               "selectedVersion": "2.5.0",
+              "included": true,
               "id": "net.minidev:accessors-smart:2.5.0",
               "parent": "net.minidev:json-smart:2.5.0",
               "children": [
@@ -2915,6 +3152,7 @@
                   "checksum": "1263369b59e29c943918de11d6d6152e2ec6085ce63e5710516f8c67d368e4bc",
                   "scope": "test",
                   "selectedVersion": "9.3",
+                  "included": true,
                   "id": "org.ow2.asm:asm:9.3",
                   "parent": "net.minidev:accessors-smart:2.5.0",
                   "children": []
@@ -2931,6 +3169,7 @@
           "checksum": "df3d0b348f1fe806bdddcb10fa4ae63c6679e9888d4bc7055f09848517976aa3",
           "scope": "test",
           "selectedVersion": "3.24.2",
+          "included": true,
           "id": "org.assertj:assertj-core:3.24.2",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -2942,6 +3181,7 @@
               "checksum": "970636134d61c183b19f8f58fa631e30d2f2abca344b37848a393cac7863dd70",
               "scope": "test",
               "selectedVersion": "1.14.12",
+              "included": false,
               "id": "net.bytebuddy:byte-buddy:1.14.12",
               "parent": "org.assertj:assertj-core:3.24.2",
               "children": []
@@ -2956,6 +3196,7 @@
           "checksum": "2d23b79211fdd19036f6940cc783543779320aaf86f38d6e385a2ff26da41272",
           "scope": "test",
           "selectedVersion": "4.2.0",
+          "included": true,
           "id": "org.awaitility:awaitility:4.2.0",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -2967,6 +3208,7 @@
               "checksum": "5e62846a89f05cd78cd9c1a553f340d002458380c320455dd1f8fc5497a8a1c1",
               "scope": "test",
               "selectedVersion": "2.2",
+              "included": false,
               "id": "org.hamcrest:hamcrest:2.2",
               "parent": "org.awaitility:awaitility:4.2.0",
               "children": []
@@ -2981,6 +3223,7 @@
           "checksum": "5e62846a89f05cd78cd9c1a553f340d002458380c320455dd1f8fc5497a8a1c1",
           "scope": "test",
           "selectedVersion": "2.2",
+          "included": true,
           "id": "org.hamcrest:hamcrest:2.2",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": []
@@ -2993,6 +3236,7 @@
           "checksum": "263e43447f4b40f126ad6b1dcbd7df379448413bdedb8e0d240c5bcbba7c7a4f",
           "scope": "test",
           "selectedVersion": "5.10.2",
+          "included": true,
           "id": "org.junit.jupiter:junit-jupiter:5.10.2",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3004,6 +3248,7 @@
               "checksum": "afff77c186cd317275803872fa5133aa801fd6ac40bd91c78a6cf8009b4b17cc",
               "scope": "test",
               "selectedVersion": "5.10.2",
+              "included": true,
               "id": "org.junit.jupiter:junit-jupiter-api:5.10.2",
               "parent": "org.junit.jupiter:junit-jupiter:5.10.2",
               "children": [
@@ -3015,6 +3260,7 @@
                   "checksum": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
                   "scope": "test",
                   "selectedVersion": "1.1.2",
+                  "included": true,
                   "id": "org.apiguardian:apiguardian-api:1.1.2",
                   "parent": "org.junit.jupiter:junit-jupiter-api:5.10.2",
                   "children": []
@@ -3027,6 +3273,7 @@
                   "checksum": "b56a5ec000a479df4973b18bba24c98fe0db8faa14c8907d3ef451d8c71fd8ae",
                   "scope": "test",
                   "selectedVersion": "1.10.2",
+                  "included": true,
                   "id": "org.junit.platform:junit-platform-commons:1.10.2",
                   "parent": "org.junit.jupiter:junit-jupiter-api:5.10.2",
                   "children": [
@@ -3038,6 +3285,7 @@
                       "checksum": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
                       "scope": "test",
                       "selectedVersion": "1.1.2",
+                      "included": false,
                       "id": "org.apiguardian:apiguardian-api:1.1.2",
                       "parent": "org.junit.platform:junit-platform-commons:1.10.2",
                       "children": []
@@ -3052,6 +3300,7 @@
                   "checksum": "48e2df636cab6563ced64dcdff8abb2355627cb236ef0bf37598682ddf742f1b",
                   "scope": "test",
                   "selectedVersion": "1.3.0",
+                  "included": true,
                   "id": "org.opentest4j:opentest4j:1.3.0",
                   "parent": "org.junit.jupiter:junit-jupiter-api:5.10.2",
                   "children": []
@@ -3066,6 +3315,7 @@
               "checksum": "b6df35da750a546ae932376f11b3c0df841f0c90c7cb2944cd39adb432886e4b",
               "scope": "test",
               "selectedVersion": "5.10.2",
+              "included": true,
               "id": "org.junit.jupiter:junit-jupiter-engine:5.10.2",
               "parent": "org.junit.jupiter:junit-jupiter:5.10.2",
               "children": [
@@ -3077,6 +3327,7 @@
                   "checksum": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
                   "scope": "test",
                   "selectedVersion": "1.1.2",
+                  "included": false,
                   "id": "org.apiguardian:apiguardian-api:1.1.2",
                   "parent": "org.junit.jupiter:junit-jupiter-engine:5.10.2",
                   "children": []
@@ -3089,6 +3340,7 @@
                   "checksum": "afff77c186cd317275803872fa5133aa801fd6ac40bd91c78a6cf8009b4b17cc",
                   "scope": "test",
                   "selectedVersion": "5.10.2",
+                  "included": false,
                   "id": "org.junit.jupiter:junit-jupiter-api:5.10.2",
                   "parent": "org.junit.jupiter:junit-jupiter-engine:5.10.2",
                   "children": []
@@ -3101,6 +3353,7 @@
                   "checksum": "905cba9b4998ccc29d1239085a7fb1fe0e28024d7526152356d810edec0a49a3",
                   "scope": "test",
                   "selectedVersion": "1.10.2",
+                  "included": true,
                   "id": "org.junit.platform:junit-platform-engine:1.10.2",
                   "parent": "org.junit.jupiter:junit-jupiter-engine:5.10.2",
                   "children": [
@@ -3112,6 +3365,7 @@
                       "checksum": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
                       "scope": "test",
                       "selectedVersion": "1.1.2",
+                      "included": false,
                       "id": "org.apiguardian:apiguardian-api:1.1.2",
                       "parent": "org.junit.platform:junit-platform-engine:1.10.2",
                       "children": []
@@ -3124,6 +3378,7 @@
                       "checksum": "b56a5ec000a479df4973b18bba24c98fe0db8faa14c8907d3ef451d8c71fd8ae",
                       "scope": "test",
                       "selectedVersion": "1.10.2",
+                      "included": false,
                       "id": "org.junit.platform:junit-platform-commons:1.10.2",
                       "parent": "org.junit.platform:junit-platform-engine:1.10.2",
                       "children": []
@@ -3136,6 +3391,7 @@
                       "checksum": "48e2df636cab6563ced64dcdff8abb2355627cb236ef0bf37598682ddf742f1b",
                       "scope": "test",
                       "selectedVersion": "1.3.0",
+                      "included": false,
                       "id": "org.opentest4j:opentest4j:1.3.0",
                       "parent": "org.junit.platform:junit-platform-engine:1.10.2",
                       "children": []
@@ -3152,6 +3408,7 @@
               "checksum": "edb1e43ff0b8067626ffb55e5e9eeca1d9ab2478141a7c7f253d115b29cc7cf2",
               "scope": "test",
               "selectedVersion": "5.10.2",
+              "included": true,
               "id": "org.junit.jupiter:junit-jupiter-params:5.10.2",
               "parent": "org.junit.jupiter:junit-jupiter:5.10.2",
               "children": [
@@ -3163,6 +3420,7 @@
                   "checksum": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
                   "scope": "test",
                   "selectedVersion": "1.1.2",
+                  "included": false,
                   "id": "org.apiguardian:apiguardian-api:1.1.2",
                   "parent": "org.junit.jupiter:junit-jupiter-params:5.10.2",
                   "children": []
@@ -3175,6 +3433,7 @@
                   "checksum": "afff77c186cd317275803872fa5133aa801fd6ac40bd91c78a6cf8009b4b17cc",
                   "scope": "test",
                   "selectedVersion": "5.10.2",
+                  "included": false,
                   "id": "org.junit.jupiter:junit-jupiter-api:5.10.2",
                   "parent": "org.junit.jupiter:junit-jupiter-params:5.10.2",
                   "children": []
@@ -3191,6 +3450,7 @@
           "checksum": "dbad5e746654910a11a59ecb4d01e38461f3e5d16161689dc2588d5554432521",
           "scope": "test",
           "selectedVersion": "5.7.0",
+          "included": true,
           "id": "org.mockito:mockito-core:5.7.0",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3202,6 +3462,7 @@
               "checksum": "970636134d61c183b19f8f58fa631e30d2f2abca344b37848a393cac7863dd70",
               "scope": "test",
               "selectedVersion": "1.14.12",
+              "included": false,
               "id": "net.bytebuddy:byte-buddy:1.14.12",
               "parent": "org.mockito:mockito-core:5.7.0",
               "children": []
@@ -3214,6 +3475,7 @@
               "checksum": "2b309a9300092e0b696f7c471fd51d9969001df784c8ab9f07997437d757ad6d",
               "scope": "test",
               "selectedVersion": "1.14.12",
+              "included": true,
               "id": "net.bytebuddy:byte-buddy-agent:1.14.12",
               "parent": "org.mockito:mockito-core:5.7.0",
               "children": []
@@ -3226,6 +3488,7 @@
               "checksum": "02dfd0b0439a5591e35b708ed2f5474eb0948f53abf74637e959b8e4ef69bfeb",
               "scope": "test",
               "selectedVersion": "3.3",
+              "included": true,
               "id": "org.objenesis:objenesis:3.3",
               "parent": "org.mockito:mockito-core:5.7.0",
               "children": []
@@ -3240,6 +3503,7 @@
           "checksum": "e2416a260c3a45ba77d674cfe27d49428e57efe21a7b2ddeae733ebb5c5d85bf",
           "scope": "test",
           "selectedVersion": "5.7.0",
+          "included": true,
           "id": "org.mockito:mockito-junit-jupiter:5.7.0",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3251,6 +3515,7 @@
               "checksum": "afff77c186cd317275803872fa5133aa801fd6ac40bd91c78a6cf8009b4b17cc",
               "scope": "test",
               "selectedVersion": "5.10.2",
+              "included": false,
               "id": "org.junit.jupiter:junit-jupiter-api:5.10.2",
               "parent": "org.mockito:mockito-junit-jupiter:5.7.0",
               "children": []
@@ -3263,6 +3528,7 @@
               "checksum": "dbad5e746654910a11a59ecb4d01e38461f3e5d16161689dc2588d5554432521",
               "scope": "test",
               "selectedVersion": "5.7.0",
+              "included": false,
               "id": "org.mockito:mockito-core:5.7.0",
               "parent": "org.mockito:mockito-junit-jupiter:5.7.0",
               "children": []
@@ -3277,6 +3543,7 @@
           "checksum": "1e9a7c443d0dd579906646d767f3701918a78cb88a93112f528305fc9095d261",
           "scope": "test",
           "selectedVersion": "1.5.1",
+          "included": true,
           "id": "org.skyscreamer:jsonassert:1.5.1",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3288,6 +3555,7 @@
               "checksum": "dfb7bae2f404cfe0b72b4d23944698cb716b7665171812a0a4d0f5926c0fac79",
               "scope": "test",
               "selectedVersion": "0.0.20131108.vaadin1",
+              "included": true,
               "id": "com.vaadin.external.google:android-json:0.0.20131108.vaadin1",
               "parent": "org.skyscreamer:jsonassert:1.5.1",
               "children": []
@@ -3302,6 +3570,7 @@
           "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
           "scope": "compile",
           "selectedVersion": "6.1.5",
+          "included": true,
           "id": "org.springframework:spring-core:6.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3313,6 +3582,7 @@
               "checksum": "c53540419e482242c815db6d6a8cd80af85a6a895e38329b9d9bd6b4616503eb",
               "scope": "compile",
               "selectedVersion": "6.1.5",
+              "included": true,
               "id": "org.springframework:spring-jcl:6.1.5",
               "parent": "org.springframework:spring-core:6.1.5",
               "children": []
@@ -3327,6 +3597,7 @@
           "checksum": "7b5b585257d26f8c2bd5dccddccbc580028aeac592d3909505511c6c5ecbf657",
           "scope": "test",
           "selectedVersion": "6.1.5",
+          "included": true,
           "id": "org.springframework:spring-test:6.1.5",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3338,6 +3609,7 @@
               "checksum": "476dac28509b3f47d0b5e895a639fa75ac2218f074ce214e44832a836c469f7e",
               "scope": "test",
               "selectedVersion": "6.1.5",
+              "included": false,
               "id": "org.springframework:spring-core:6.1.5",
               "parent": "org.springframework:spring-test:6.1.5",
               "children": []
@@ -3352,6 +3624,7 @@
           "checksum": "2fd859463321453117a0f9ddb17d460d4ecc433d10ec10c12e7933e03a5cd6dc",
           "scope": "test",
           "selectedVersion": "3.2.4",
+          "included": false,
           "id": "org.springframework.boot:spring-boot-starter:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": []
@@ -3364,6 +3637,7 @@
           "checksum": "e28f5561c45755a239257df6cfad856562aba68e7b7465cb645b1fc4897feba7",
           "scope": "test",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-test:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3375,6 +3649,7 @@
               "checksum": "f9bbba10663bbe4675264aeb07197629f1bbcac611189f8987a46c82f7ffb95a",
               "scope": "test",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot:3.2.4",
               "parent": "org.springframework.boot:spring-boot-test:3.2.4",
               "children": []
@@ -3389,6 +3664,7 @@
           "checksum": "c511ada18c1bcc6c31b8cebe624fbbf1b37a99fb084ffd651eb37eea91e061d6",
           "scope": "test",
           "selectedVersion": "3.2.4",
+          "included": true,
           "id": "org.springframework.boot:spring-boot-test-autoconfigure:3.2.4",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3400,6 +3676,7 @@
               "checksum": "f9bbba10663bbe4675264aeb07197629f1bbcac611189f8987a46c82f7ffb95a",
               "scope": "test",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot:3.2.4",
               "parent": "org.springframework.boot:spring-boot-test-autoconfigure:3.2.4",
               "children": []
@@ -3412,6 +3689,7 @@
               "checksum": "14b4694e1a782ea946264a7676da2936d2474abf0f875739b1af5da3bb7ad85b",
               "scope": "test",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-autoconfigure:3.2.4",
               "parent": "org.springframework.boot:spring-boot-test-autoconfigure:3.2.4",
               "children": []
@@ -3424,6 +3702,7 @@
               "checksum": "e28f5561c45755a239257df6cfad856562aba68e7b7465cb645b1fc4897feba7",
               "scope": "test",
               "selectedVersion": "3.2.4",
+              "included": false,
               "id": "org.springframework.boot:spring-boot-test:3.2.4",
               "parent": "org.springframework.boot:spring-boot-test-autoconfigure:3.2.4",
               "children": []
@@ -3438,6 +3717,7 @@
           "checksum": "7e70f23d4f75e05f0ee79f0f6b9e13b6cf51d34f36c5fc3a6b839429dde1efef",
           "scope": "test",
           "selectedVersion": "2.9.1",
+          "included": true,
           "id": "org.xmlunit:xmlunit-core:2.9.1",
           "parent": "org.springframework.boot:spring-boot-starter-test:3.2.4",
           "children": [
@@ -3449,6 +3729,7 @@
               "checksum": "0d6bcfe47763e85047acf7c398336dc84ff85ebcad0a7cb6f3b9d3e981245406",
               "scope": "test",
               "selectedVersion": "4.0.2",
+              "included": false,
               "id": "jakarta.xml.bind:jakarta.xml.bind-api:4.0.2",
               "parent": "org.xmlunit:xmlunit-core:2.9.1",
               "children": []
@@ -3462,8 +3743,8 @@
   "metaData": {
     "environment": {
       "osName": "Linux",
-      "mavenVersion": "3.9.5",
-      "javaVersion": "21.0.1"
+      "mavenVersion": "3.9.8",
+      "javaVersion": "22.0.1"
     },
     "config": {
       "includeMavenPlugins": false,
