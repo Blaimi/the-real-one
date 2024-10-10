@@ -13,6 +13,10 @@ kubectl wait pods -n biletado -l app.kubernetes.io/part-of=biletado --for condit
 ```shell
 mvn io.github.chains-project:maven-lockfile:generate
 ```
+### from within a container
+```shell
+podman run --rm -it -v $PWD:/app --security-opt="label=disable" --workdir=/app $(cat Containerfile | sed -nE 's~FROM (docker.io/library/maven:.*) as builder~\1~p') mvn io.github.chains-project:maven-lockfile:generate
+```
 
 ## Build from source
 
