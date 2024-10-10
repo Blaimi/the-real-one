@@ -14,7 +14,7 @@
 # * Deploy built artifacts from master branch only.
 include:
   - project: 'biletado/pipeline'
-    ref: "6"
+    ref: "7"
     file: '/image-build.yml'
 
 variables:
