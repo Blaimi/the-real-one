@@ -16,8 +16,12 @@ include:
   - project: 'biletado/pipeline'
     ref: "7"
     file: '/image-build.yml'
+  - project: 'biletado/pipeline'
+    ref: "integration-tests"
+    file: '/integration-tests.yml'
 
 variables:
+  ASSETS_VERSION: 'v2'
   # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
   MAVEN_OPTS: >-
     -Dhttps.protocols=TLSv1.2
