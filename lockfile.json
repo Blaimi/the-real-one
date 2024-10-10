@@ -84,6 +84,32 @@
       ]
     },
     {
+      "groupId": "org.postgresql",
+      "artifactId": "postgresql",
+      "version": "42.7.4",
+      "checksumAlgorithm": "SHA-256",
+      "checksum": "188976721ead8e8627eb6d8389d500dccc0c9bebd885268a3047180274a6031e",
+      "scope": "runtime",
+      "selectedVersion": "42.7.4",
+      "included": true,
+      "id": "org.postgresql:postgresql:42.7.4",
+      "children": [
+        {
+          "groupId": "org.checkerframework",
+          "artifactId": "checker-qual",
+          "version": "3.42.0",
+          "checksumAlgorithm": "SHA-256",
+          "checksum": "ccaedd33af0b7894d9f2f3b644f4d19e43928e32902e61ac4d10777830f5aac7",
+          "scope": "runtime",
+          "selectedVersion": "3.42.0",
+          "included": true,
+          "id": "org.checkerframework:checker-qual:3.42.0",
+          "parent": "org.postgresql:postgresql:42.7.4",
+          "children": []
+        }
+      ]
+    },
+    {
       "groupId": "org.springframework.boot",
       "artifactId": "spring-boot-starter-data-jpa",
       "version": "3.3.4",
@@ -3483,32 +3509,6 @@
               "children": []
             }
           ]
-        }
-      ]
-    },
-    {
-      "groupId": "org.postgresql",
-      "artifactId": "postgresql",
-      "version": "42.7.3",
-      "checksumAlgorithm": "SHA-256",
-      "checksum": "a2644cbfba1baa145ff7e8c8ef582a6eed7a7ec4ca792f7f054122bdec756268",
-      "scope": "runtime",
-      "selectedVersion": "42.7.3",
-      "included": true,
-      "id": "org.postgresql:postgresql:42.7.3",
-      "children": [
-        {
-          "groupId": "org.checkerframework",
-          "artifactId": "checker-qual",
-          "version": "3.42.0",
-          "checksumAlgorithm": "SHA-256",
-          "checksum": "ccaedd33af0b7894d9f2f3b644f4d19e43928e32902e61ac4d10777830f5aac7",
-          "scope": "runtime",
-          "selectedVersion": "3.42.0",
-          "included": true,
-          "id": "org.checkerframework:checker-qual:3.42.0",
-          "parent": "org.postgresql:postgresql:42.7.3",
-          "children": []
         }
       ]
     },
