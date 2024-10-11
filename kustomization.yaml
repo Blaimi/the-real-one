@@ -8,6 +8,7 @@ configMapGenerator:
   - name: replacements
     literals:
       - ASSETS_IMAGE=registry.gitlab.com/biletado/backend/assets/the-real-one:latest
+      - POSTGRES_ASSETS_DBNAME=assets_v2
 
 # https://stackoverflow.com/a/78742842/568291
 replacements:
@@ -23,6 +24,18 @@ replacements:
           name: assets
         fieldPaths:
           - spec.template.spec.containers.[name=assets].image
+  - source:
+      kind: ConfigMap
+      name: replacements
+      fieldPath: data.POSTGRES_ASSETS_DBNAME
+    targets:
+      - select:
+          group: apps
+          version: v1
+          kind: Deployment
+          name: assets
+        fieldPaths:
+          - spec.template.spec.containers.[name=assets].env.[name=POSTGRES_ASSETS_DBNAME].value
 patches:
   - patch: |-
       - op: add
