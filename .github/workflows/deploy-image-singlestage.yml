@@ -48,6 +48,4 @@ jobs:
           push: true
           tags: |
             ${{ steps.meta.outputs.tags }}
-          flavor: |
-            latest=true
           labels: ${{ steps.meta.outputs.labels }}
