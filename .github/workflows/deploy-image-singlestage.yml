@@ -1,4 +1,4 @@
-name: Create and publish a Docker image with single-stage Containerfile
+name: single-stage
 
 on: push
 
